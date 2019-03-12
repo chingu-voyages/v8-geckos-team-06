@@ -7,6 +7,7 @@
 
 Over the duration of this Chingu Voyage, we'll work together towards a common Goal. Our backgrounds and skills may be very different, but that only makes this trip a whole lot more valuable.
 
+---
 
 ### Tier-2 Front-End Projects
 
@@ -20,11 +21,11 @@ Interested in using a framework/library like React, Vue, Angular, etc.
 #### Build something completely new!
 
 Examples:
-[Video Music App](https://gecho.herokuapp.com/)
+[Video Music App](https://gecho.herokuapp.com/) / 
 [Methodize](https://methodize.herokuapp.com/)
 
 
----
+
 
 > “The best things in life make you sweaty.”
 – Edgar Allan Poe
