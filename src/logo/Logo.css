@@ -1,0 +1,35 @@
+svg {
+  transform-origin: 50% 50%;
+
+
+}
+
+.svga {
+  fill: #297844;
+}
+
+.svgb {
+  fill: #19649a;
+}
+.svgc {
+}
+
+.svgd {
+
+}
+
+.animate {
+  animation-name: spinround;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes spinround {
+  0% {transform: rotate(360deg);}
+
+  100% {transform: rotate(0deg);}
+}

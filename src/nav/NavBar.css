@@ -1,0 +1,32 @@
+.Nav {
+  width: 100%;
+}
+
+.Nav ul {
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.Nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0 10px 5px;
+  font-size: 1.1em;
+  transition: all 200ms ease;
+}
+
+.Nav ul li:hover, .Nav ul li:focus {
+  border-bottom: 2px solid;
+  cursor: pointer;
+}
+
+.signin:hover, .signin:focus {
+  color: #297844;
+  font-weight: 600;
+}
+
+.register:hover, .register:focus {
+  color: #19649a;
+  font-weight: 600;
+}
