@@ -4,7 +4,7 @@ import './Register.css';
 const Register = ({ onRouteChange }) => {
   return (
     <main className="Register">
-      <form className="measure center" >
+      <form className="measure center" name="register" data-netlify="true">
         <fieldset
           id="sign_up"
         className="ba b--transparent ph0 mh0">

@@ -23,10 +23,8 @@
 
 .signin:hover, .signin:focus {
   color: #297844;
-  font-weight: 600;
 }
 
 .register:hover, .register:focus {
   color: #19649a;
-  font-weight: 600;
 }
