@@ -21,13 +21,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App fade-in">
         { this.state.route === 'home'
           ?
             <header className="App-header">
-              <h2 className="title">
-                Meds Hub
-              </h2>
+              <div className="title">
+                Meds<span>HUB</span>
+              </div>
               <Logo />
               <NavBar onRouteChange={this.onRouteChange}/>
             </header>
