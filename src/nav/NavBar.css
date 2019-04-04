@@ -16,15 +16,20 @@
   transition: all 200ms ease;
 }
 
-.Nav ul li:hover, .Nav ul li:focus {
-  border-bottom: 2px solid;
-  cursor: pointer;
+.signin, .register {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
 }
 
 .signin:hover, .signin:focus {
   color: #297844;
+  border-bottom: 2px solid;
+  cursor: pointer;
 }
 
 .register:hover, .register:focus {
   color: #19649a;
+  border-bottom: 2px solid;
+  cursor: pointer;
 }
