@@ -5,22 +5,22 @@ svg {
 
 /* Arrow */
 .svga {
-  fill: #297844;
+  fill: var(--green);
 }
 
 /* Arrow */
 .svgb {
-  fill: #19649a;
+  fill: var(--blue);
 }
 
 /* Inner Circle */
 .svgc {
-  fill: #19649a;
+  fill: var(--blue);
 }
 
 /* Cross */
 .svgd {
-  fill: #297844;
+  fill: var(--green);
 }
 
 /* Pulse animation */

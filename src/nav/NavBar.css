@@ -23,13 +23,13 @@
 }
 
 .signin:hover, .signin:focus {
-  color: #297844;
+  color: var(--green);
   border-bottom: 2px solid;
   cursor: pointer;
 }
 
 .register:hover, .register:focus {
-  color: #19649a;
+  color: var(--blue);
   border-bottom: 2px solid;
   cursor: pointer;
 }

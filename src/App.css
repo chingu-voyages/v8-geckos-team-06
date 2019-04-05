@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #eee;
+  background: var(--bgcolor);
 }
 
 .title {
@@ -24,7 +24,7 @@
 }
 
 .title span {
-  color: #297844;
+  color: var(--green);
 }
 
 .fade-in {

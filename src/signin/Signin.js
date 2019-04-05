@@ -4,33 +4,29 @@ import './Signin.css';
 const Signin = ({ onRouteChange }) => {
   return (
     <main className="Signin">
-      <form className="measure center">
+      <form className="form">
 
-        <fieldset
-          id="sign_up"
-        className="ba b--transparent ph0 mh0">
-          <legend className="f4 fw6 ph0 mh0">Sign In</legend>
-          <div className="mt3">
-            <label className="db fw6 lh-copy f6" htmlFor="email">
-              Email
-            </label>
-            <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email"  id="email" />
+        <fieldset id="sign_up" className="sign_up">
+          <legend className="form-title">Sign In</legend>
+          <div className="inputs-container">
+            <label className="email" htmlFor="email">Email</label>
+            <input className="form-input" type="email" name="email"  id="email" />
           </div>
           <div className="mv3">
-            <label className="db fw6 lh-copy f6" htmlFor="password">
+            <label className="form-input" htmlFor="password">
               Password
             </label>
-            <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password" />
+            <input className="form-input" type="password" name="password"  id="password" />
           </div>
         </fieldset>
 
-        <div className="">
-          <input onClick={() => onRouteChange('home')} className="b ph3 pv2 input-reset ba b--black bg-transparent pointer f6 dib" type="submit" value="Sign in" />
+        <div className="inputs-container">
+          <input onClick={() => onRouteChange('home')} className="form-btn" type="submit" value="Sign in" />
         </div>
 
         <div className="lh-copy mt3 pointer">
-          <p onClick={() => onRouteChange('register')} className="f6 link dim black db">Register </p>
-          <p onClick={() => onRouteChange('home')} className="f6 link dim black db">Home </p>
+          <p onClick={() => onRouteChange('register')} className="form-link">Register </p>
+          <p onClick={() => onRouteChange('home')} className="form-link">Home </p>
 
         </div>
       </form>
