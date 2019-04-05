@@ -32,6 +32,8 @@ const Register = ({ onRouteChange }) => {
         </fieldset>
         <div className="">
           <input onClick={() => onRouteChange('signin')} className="b ph3 pv2 input-reset ba b--black bg-transparent pointer f6 dib" type="submit" value="Sign Up" />
+          <p onClick={() => onRouteChange('home')} className="f6 link dim black db" style={{cursor: 'pointer'}}>Home</p>
+
         </div>
       </form>
     </main>
