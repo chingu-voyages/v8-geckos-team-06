@@ -1,3 +1,11 @@
+:root {
+  --blue: #19649a;
+  --green: #297844;
+  --orange: #FFC759;
+  --bgcolor: #eee;
+}
+
+
 body {
   margin: 0;
   padding: 0;

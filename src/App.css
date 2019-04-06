@@ -4,43 +4,37 @@
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.gecko {
-  animation: gecko-shift infinite 5s ease-in-out;
-  fill: #fff;
+  margin: 0;
 }
 
 .App-header {
-  background-color: #282c34;
+  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: var(--bgcolor);
 }
 
-.App-header h2 {
-  padding-bottom: 5px;
-  box-shadow: 0px 3px 0px 0px rgb(12, 122, 76);
+.title {
+  font-size: 1.5em;
+  margin: 1em;
+  font-weight: 800;
 }
 
-.App-link {
-  color: #61dafb;
+.title span {
+  color: var(--green);
 }
 
-@keyframes gecko-shift {
-  0%, 100% {
-    fill: rgb(6, 129, 77);
-  }
-  50% {
-    fill: rgb(8, 180, 159);
-  }
+.fade-in {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-delay: 0;
+}
+
+@keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }

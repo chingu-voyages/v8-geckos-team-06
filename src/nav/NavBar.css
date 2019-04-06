@@ -1,0 +1,35 @@
+.Nav {
+  width: 100%;
+}
+
+.Nav ul {
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.Nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0 10px 5px;
+  font-size: 1.1em;
+  transition: all 200ms ease;
+}
+
+.signin, .register {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+.signin:hover, .signin:focus {
+  color: var(--green);
+  border-bottom: 2px solid;
+  cursor: pointer;
+}
+
+.register:hover, .register:focus {
+  color: var(--blue);
+  border-bottom: 2px solid;
+  cursor: pointer;
+}
