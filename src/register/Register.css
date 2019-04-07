@@ -27,11 +27,11 @@
 
 .input-container {
   margin: 1em;
-  display: flex;
 
 }
 
 .form-input {
+  display: flex;
   padding: 5px 10px;
   font-size: 1.1em;
 }
@@ -82,4 +82,15 @@ label {
 
 .form-link {
   cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (min-width: 500px) {
+  .input-container {
+    display: flex;
+  }
+  .form-input {
+    display: block;
+  }
 }
