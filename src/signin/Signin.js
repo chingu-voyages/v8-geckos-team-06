@@ -6,7 +6,7 @@ const Signin = ({ onRouteChange }) => {
     <main className="Signin">
       <form className="form">
 
-        <h3 className="signin-title">Sign In</h3>
+        <h3 className="signin-title">Log In</h3>
 
         <div id="sign_in" className="sign_in">
 
@@ -27,7 +27,7 @@ const Signin = ({ onRouteChange }) => {
         </div>
 
         <div className="form-links">
-          <p onClick={() => onRouteChange('register')} className="form-link">Register </p>
+          <p onClick={() => onRouteChange('register')} className="rgstr-link">Register </p>
           <p onClick={() => onRouteChange('home')} className="form-link">Home </p>
 
         </div>

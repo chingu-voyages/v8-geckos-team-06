@@ -106,7 +106,15 @@ label {
 
 .form-link {
   cursor: pointer;
+  opacity: 1;
+  transition: all .15s ease-in;
 }
+
+.form-link:hover, .form-link:focus {
+  opacity: .5;
+  transition: all .15s ease-in;
+}
+
 
 /* Media Queries */
 
