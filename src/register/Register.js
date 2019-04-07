@@ -6,7 +6,7 @@ const Register = ({ onRouteChange }) => {
     <main className="Register">
       <form className="form">
 
-        <h3 className="form-title">Register</h3>
+        <h3 className="register-title">Register</h3>
 
         <div id="sign_up" className="sign_up">
 
@@ -28,6 +28,11 @@ const Register = ({ onRouteChange }) => {
           <div className="input-container">
             <label className="confirm-password" htmlFor="confirm-password">Confirm Password</label>
             <input className="form-input" type="password" name="confirm-password"  id="confirm-password" />
+          </div>
+
+          <div className="tos-container">
+            <input className="tos" type="checkbox" name="tos"/>
+            <label htmlFor="tos">I agree to the <span>Terms & Conditions</span></label>
           </div>
 
         </div>

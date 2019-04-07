@@ -12,13 +12,13 @@
 .sign_up {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   border: none;
   padding: 20px;
   margin-bottom: 1em;
 }
 
-.form-title {
+.register-title {
   font-size: 1.5em;
   align-self: center;
   margin: 1em;
@@ -34,6 +34,7 @@
   display: flex;
   padding: 5px 10px;
   font-size: 1.1em;
+  margin-top: 5px;
 }
 
 label {
@@ -53,6 +54,29 @@ label {
 }
 
 .confirm-password {
+
+}
+
+.tos-container {
+  margin: 10px;
+}
+
+.tos-container label {
+
+}
+
+.tos-container label span {
+  font-weight: 600;
+  color: var(--blue);
+
+}
+
+.tos-container label span:hover, .tos-container label span:focus {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tos {
 
 }
 
@@ -87,6 +111,10 @@ label {
 /* Media Queries */
 
 @media (min-width: 500px) {
+  .sign_up {
+    align-items: flex-end;
+  }
+
   .input-container {
     display: flex;
   }

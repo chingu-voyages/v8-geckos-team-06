@@ -6,8 +6,9 @@ const Signin = ({ onRouteChange }) => {
     <main className="Signin">
       <form className="form">
 
-        <fieldset id="sign_in" className="sign_in">
-          <legend className="form-title">Sign In</legend>
+        <h3 className="signin-title">Sign In</h3>
+
+        <div id="sign_in" className="sign_in">
 
           <div className="input-container">
             <label className="email" htmlFor="email">Email</label>
@@ -19,7 +20,7 @@ const Signin = ({ onRouteChange }) => {
             <input className="form-input" type="password" name="password"  id="password" />
           </div>
 
-        </fieldset>
+        </div>
 
         <div className="form-buttons">
           <input onClick={() => onRouteChange('home')} className="login-btn" type="submit" value="Log In" />
