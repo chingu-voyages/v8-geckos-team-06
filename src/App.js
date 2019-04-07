@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import logo from './assets/medicine.svg';
 
 import NavBar from './nav/NavBar';
 import Signin from './signin/Signin';

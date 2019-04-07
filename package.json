@@ -1,6 +1,7 @@
 {
-  "name": "v8-geckos-06",
+  "name": "MedsHub",
   "version": "0.1.0",
+  "description": "A collaborative App for sharing Medicines",
   "private": true,
   "dependencies": {
     "react": "^16.8.4",
