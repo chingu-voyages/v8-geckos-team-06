@@ -65,7 +65,7 @@ label {
   padding: 10px 20px;
   background: none;
   border: 2px solid var(--green);
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 1em;
   font-weight: 600;
   color: var(--green);

@@ -77,7 +77,43 @@ label {
 }
 
 .tos {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--bgcolor);
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+}
 
+.tos:hover {
+  background: #6f94bf;
+}
+
+.tos:checked {
+  background: var(--blue);
+}
+
+.tos:checked::before {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 2em;
+  text-align: center;
+  line-height: 30px;
 }
 
 .form-buttons {
@@ -89,7 +125,7 @@ label {
   padding: 10px 20px;
   background: none;
   border: 2px solid var(--blue);
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 1em;
   font-weight: 600;
   color: var(--blue);
@@ -114,6 +150,9 @@ label {
   opacity: .5;
   transition: all .15s ease-in;
 }
+
+
+
 
 
 /* Media Queries */
