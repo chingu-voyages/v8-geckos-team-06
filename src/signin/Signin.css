@@ -54,6 +54,21 @@
   font-weight: 600;
 }
 
+input::placeholder {
+  font-weight: 100;
+  opacity: .5;
+}
+
+input::-webkit-input-placeholder {
+  font-weight: 100;
+  opacity: .5;
+}
+
+input:-ms-input-placeholder {
+  font-weight: 100;
+  opacity: .5;
+}
+
 label {
   margin: 10px;
 }
