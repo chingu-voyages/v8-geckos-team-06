@@ -69,7 +69,6 @@
 
 .form-input:focus + label {
   color: var(--blue);
-  font-weight: 600;
 }
 
 input::placeholder {
