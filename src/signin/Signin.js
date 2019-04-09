@@ -10,14 +10,14 @@ const Signin = ({ onRouteChange }) => {
 
         <div id="sign_in" className="sign_in">
 
-          <div className="input-container">
+          <div className="login-input-container">
+            <input className="login-form-input" type="email" name="email"  id="email" placeholder="enter your email address"/>
             <label className="email" htmlFor="email">Email</label>
-            <input className="form-input" type="email" name="email"  id="email" />
           </div>
 
-          <div className="input-container">
+          <div className="login-input-container">
+            <input className="login-form-input" type="password" name="password"  id="password" placeholder="enter your password"/>
             <label className="password" htmlFor="password">Password</label>
-            <input className="form-input" type="password" name="password"  id="password" />
           </div>
 
         </div>

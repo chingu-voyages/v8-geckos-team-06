@@ -7,27 +7,30 @@ const Register = ({ onRouteChange }) => {
       <form className="form">
 
         <h3 className="register-title">Register</h3>
+        {/* <div className="pill-wrapper">
+          <div className="pill-icon"></div>
+        </div> */}
 
         <div id="sign_up" className="sign_up">
 
           <div className="input-container">
+            <input className="form-input input-filled" type="text" name="name"  id="name" placeholder="John Doe" required/>
             <label className="name" htmlFor="name">Name</label>
-            <input className="form-input" type="text" name="name"  id="name" />
           </div>
 
           <div className="input-container">
+            <input className="form-input" type="email" name="email"  id="email" placeholder="john@doe.com" required/>
             <label className="email" htmlFor="email">Email</label>
-            <input className="form-input" type="email" name="email"  id="email" />
           </div>
 
           <div className="input-container">
+            <input className="form-input" type="password" name="password"  id="password" placeholder="type your password" required/>
             <label className="password" htmlFor="password">Password</label>
-            <input className="form-input" type="password" name="password"  id="password" />
           </div>
 
           <div className="input-container">
+            <input className="form-input" type="password" name="confirm-password"  id="confirm-password" placeholder="re-type your password" required/>
             <label className="confirm-password" htmlFor="confirm-password">Confirm Password</label>
-            <input className="form-input" type="password" name="confirm-password"  id="confirm-password" />
           </div>
 
           <div className="tos-container">

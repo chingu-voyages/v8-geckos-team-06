@@ -12,7 +12,7 @@
 .sign_in {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   border: none;
   padding: 20px;
   margin-bottom: 1em;
@@ -25,35 +25,41 @@
   color: var(--green);
 }
 
-.input-container {
+.login-input-container {
   margin: 1em;
-
+  display: flex;
+  flex-direction: column;
 }
 
-.form-input {
+.login-form-input {
   display: flex;
-  padding: 5px 10px;
+  padding: 3px 10px;
   font-size: 1.1em;
+  margin: 5px 0;
+  border: none;
+  background-color: var(--bgcolor);
+  border-bottom: 2px solid #999;
+  transition: all 300ms ease-out;
+}
+
+.login-form-input:focus {
+  border-color: var(--green);
+  box-shadow: 0 2px 0 0 var(--green);
+  outline: none;
+  color: var(--green);
+}
+
+.login-form-input:focus + label {
+  color: var(--green);
+  font-weight: 600;
 }
 
 label {
   margin: 10px;
 }
 
-.name {
-
-}
-
-.email {
-
-}
-
-.password {
-
-}
-
-.confirm-password {
-
+.name, .email, .password, .confirm-password {
+  order: -1;
 }
 
 .form-buttons {
@@ -69,6 +75,7 @@ label {
   font-size: 1em;
   font-weight: 600;
   color: var(--green);
+  transition: all 200ms ease;
 }
 
 .login-btn:hover, .login-btn:focus {
@@ -99,10 +106,12 @@ label {
 /* Media Queries */
 
 @media (min-width: 500px) {
-  .input-container {
-    display: flex;
+  .login-input-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
-  .form-input {
+  .login-form-input {
     display: block;
   }
 }
