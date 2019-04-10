@@ -1,39 +1,71 @@
 import React from 'react';
 import './Signin.css';
 
-const Signin = ({ onRouteChange }) => {
-  return (
-    <main className="Signin">
-      <form className="form">
 
-        <h3 className="signin-title">Log In</h3>
+class Signin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: ""
+    }
+  }
 
-        <div id="sign_in" className="sign_in">
+  onLoginSubmit = (e) => {
+    const { onRouteChange } = this.props;
+    e.preventDefault();
+    console.log(this.state);
+    onRouteChange('home');
+  }
 
-          <div className="login-input-container">
-            <input className="login-form-input" type="email" name="email"  id="email" placeholder="enter your email address"/>
-            <label className="email" htmlFor="email">Email</label>
+  onLoginInputChange = (e) => {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    })
+  }
+
+  render() {
+    const { onRouteChange } = this.props;
+    return (
+      <main className="Signin">
+        <form className="login-form" onSubmit={this.onLoginSubmit}>
+
+          <h3 className="signin-title">Log In</h3>
+
+          <div id="sign_in" className="sign_in">
+
+            <div className="login-input-container">
+              <input className="login-form-input" type="email" name="email"  id="email" placeholder="enter your email address" required
+                onChange={this.onLoginInputChange}/>
+              <label className="email" htmlFor="email">Email</label>
+            </div>
+
+            <div className="login-input-container">
+              <input className="login-form-input" type="password" name="password"  id="password" placeholder="enter your password" required/>
+              <label className="password" htmlFor="password">Password</label>
+            </div>
+
           </div>
 
-          <div className="login-input-container">
-            <input className="login-form-input" type="password" name="password"  id="password" placeholder="enter your password"/>
-            <label className="password" htmlFor="password">Password</label>
+          <div className="form-buttons">
+            <input className="login-btn" type="submit" value="Log In" />
           </div>
 
-        </div>
+          <div className="form-links">
+            <p onClick={() => onRouteChange('register')} className="rgstr-link">Register </p>
+            <p onClick={() => onRouteChange('home')} className="form-link">Home </p>
 
-        <div className="form-buttons">
-          <input onClick={() => onRouteChange('home')} className="login-btn" type="submit" value="Log In" />
-        </div>
+          </div>
+        </form>
+      </main>
+    );
 
-        <div className="form-links">
-          <p onClick={() => onRouteChange('register')} className="rgstr-link">Register </p>
-          <p onClick={() => onRouteChange('home')} className="form-link">Home </p>
-
-        </div>
-      </form>
-    </main>
-  );
+  }
 }
+
 
 export default Signin;

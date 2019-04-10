@@ -6,7 +6,7 @@
   background: var(--bgcolor);
 }
 
-.form {
+.register-form {
 }
 
 .sign_up {
@@ -202,7 +202,7 @@ label {
 
 @media (min-width: 500px) {
   .sign_up {
-    align-items: flex-end;
+    /* align-items: flex-end; */
   }
 
   .pill-wrapper {
