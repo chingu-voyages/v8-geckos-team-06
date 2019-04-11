@@ -10,7 +10,6 @@ class Register extends React.Component {
     return (
       <main className="Register">
         <form className="register-form" onSubmit={this.onRegisterSubmit} autoComplete="off">
-
           <h3 className="register-title">Register</h3>
           <RegisterForm />
           {/* <div className="pill-wrapper">
@@ -42,6 +41,7 @@ class Register extends React.Component {
           {/* <div className="form-buttons"> */}
           {/*   <input className="register-btn" type="submit" value="Sign Up" /> */}
           {/* </div> */}
+          <br></br>
           <div className="form-links">
             <Link to="/">Home</Link>
           </div>

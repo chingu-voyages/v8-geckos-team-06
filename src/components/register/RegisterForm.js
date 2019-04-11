@@ -45,7 +45,7 @@ submitSucceeded ? (
 			<div>
 				<label htmlFor="Link" style={{color:'goldenrod'}}>already registered?</label>
 				<br></br>
-				<Link to='/login' className="btn btn-outline-alert btn-lg">LOGIN</Link>
+				<Link to='/login' className="btn btn-outline-alert btn-lg">Login</Link>
 			</div>
 		</div>
 	)

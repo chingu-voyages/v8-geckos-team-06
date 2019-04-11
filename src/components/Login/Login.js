@@ -17,8 +17,9 @@ class Login extends React.Component {
   render() {
     return (
       <main className="Signin">
-        {/* <form className="login-form"> */}
+        <form className="login-form">
         <h3 className="signin-title">Log In</h3>
+        <LoginForm />
         {/*   <div id="sign_in" className="sign_in"> */}
         {/*     <div className="login-input-container"> */}
         {/*       <input className="login-form-input" type="email" name="email"  id="email" placeholder="enter your email address" required */}
@@ -37,9 +38,11 @@ class Login extends React.Component {
         {/*    <NavLink  to="/register">Register</NavLink> */}
         {/*    <NavLink to="">Home</NavLink> */}
         {/*   </div> */}
-        {/* </form> */}
-        <LoginForm />
-        <Link to="">Home</Link>
+        <div className="form-links">
+        <br></br>
+            <Link to="/">Home</Link>
+        </div>
+        </form>
       </main>
     );
 
