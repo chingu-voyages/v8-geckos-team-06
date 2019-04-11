@@ -1,4 +1,4 @@
-import Login from '../components/signin/Signin.js';
+import Login from '../components/Login/Login.js';
 
 import { changeDraft, login } from '../actions';
 
