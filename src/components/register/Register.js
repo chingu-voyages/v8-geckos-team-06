@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 import './Register.css';
 
 class Register extends React.Component {
@@ -67,7 +68,7 @@ class Register extends React.Component {
             <input className="register-btn" type="submit" value="Sign Up" />
           </div>
           <div className="form-links">
-            <p onClick={() => onRouteChange('home')} className="form-link">Home </p>
+            <NavLink to="/">Home</NavLink>
           </div>
         </form>
       </main>
