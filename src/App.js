@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 
-import NavBar from './nav/NavBar';
-import Signin from './signin/Signin';
-import Register from './register/Register';
-import Logo from './logo/Logo';
+import NavBar from './components/nav/NavBar';
+import Signin from './components/signin/Signin';
+import Register from './components/register/Register';
+import Logo from './components/logo/Logo';
 
 class App extends Component {
   constructor() {
