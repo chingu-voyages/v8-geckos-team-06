@@ -24,7 +24,7 @@ submitSucceeded ? (
 			<form  onSubmit={ handleSubmit } autoComplete="off">
 				 <div>
 				 		<label htmlFor="name"  >Name</label>
-						<Field name="name" component={ renderField } type="text"  />
+						<Field name="name" component={ renderField } required type="text"  />
 				 
 				 		<label htmlFor="email">Email</label>
 						<Field name="email" component={ renderField } type="email" />
@@ -34,12 +34,15 @@ submitSucceeded ? (
 				 
 						<label htmlFor="ConfirmPassword">Confirm Password</label>
 						<Field name="ConfirmPassword" component={ renderField } type="password" required />
+
+						<label htmlFor="Terms">Terms & conditions</label>
+						<Field name="Terms&Cond" component={ renderField } type="checkbox" required />
 				 </div>
 				 <div>
 					 { error && <strong style={{color:'coral'}}>{ error }</strong> }
 				 </div>
 				 <br></br>
-				<button type="submit" disabled={ pristine || submitting } className="btn btn-outline-primary btn-lg">Register</button>
+				<button type="submit" onClick={(e)=>e.preventDefault()} disabled={ pristine || submitting } className="btn btn-outline-primary btn-lg">Register</button>
 			</form>
 			<br></br>
 			<div>
@@ -58,7 +61,8 @@ submitSucceeded ? (
 				_error: 'Register Failed',
 				password: 'Wrong Password',
 				confirmPassword: 'Its not matching',
-				email: 'Enter a valid Email please'
+				email: 'Enter a valid Email please',
+				tos: 'Need to accept the Terms and Conditios'
 			})
 			})
 		}

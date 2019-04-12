@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+
 import RegisterForm from './RegisterForm.js';
 
 import './Register.css';
 
-class Register extends React.Component {
-  render() {
-    const { onRouteChange } = this.props;
+const Register = ({ token }) => {
+  if ( !token ) {
     return (
       <main className="Register">
-        <form className="register-form" onSubmit={this.onRegisterSubmit} autoComplete="off">
           <h3 className="register-title">Register</h3>
           <RegisterForm />
           {/* <div className="pill-wrapper">
@@ -45,11 +44,13 @@ class Register extends React.Component {
           <div className="form-links">
             <Link to="/">Home</Link>
           </div>
-        </form>
       </main>
-    );
-
+    )
+  } else {
+    return (
+      <Redirect to="/login" />
+      )
   }
-}
+  }
 
 export default Register;
