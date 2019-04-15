@@ -42,7 +42,7 @@ submitSucceeded ? (
 					 { error && <strong style={{color:'coral'}}>{ error }</strong> }
 				 </div>
 				 <br></br>
-				<button type="submit" onClick={(e)=>e.preventDefault()} disabled={ pristine || submitting } className="btn btn-outline-primary btn-lg">Register</button>
+				<button type="submit" disabled={ pristine || submitting } className="btn btn-outline-primary btn-lg">Register</button>
 			</form>
 			<br></br>
 			<div>

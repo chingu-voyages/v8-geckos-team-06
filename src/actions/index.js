@@ -5,10 +5,12 @@ import {
 	CHANGE_DRAFT
 } from '../constants/actionTypes.js';
 
+
 export const logOut = (isLogged) => ({
 	type: LOG_OUT,
 	value: false,
-})
+});
+
 
 export const login = ( values ) => (dispatch, getState, api ) =>
 			api.login( values )

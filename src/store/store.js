@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
+import MhubApi from '../services/api.js';
 
 const loggerMiddleware = store => next => action => {
 	console.group(action.type);
@@ -11,11 +12,13 @@ const loggerMiddleware = store => next => action => {
 	console.groupEnd(action.type);
 	return returnValue
 }
+const mhubApiInstance = new MhubApi();
+console.log('Api Instance', mhubApiInstance.register);
 
 const composeEnhancers =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
 	rootReducer,
-	composeEnhancers(applyMiddleware(thunk,loggerMiddleware))
+	composeEnhancers(applyMiddleware(thunk.withExtraArgument(mhubApiInstance),loggerMiddleware))
 	)
 
 export default store;

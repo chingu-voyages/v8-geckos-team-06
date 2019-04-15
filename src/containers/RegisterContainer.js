@@ -15,8 +15,8 @@ const mapDispatchToProps = dispatch => ({
 	onDraftChange: ( draftValue ) => {
 		dispatch( changeDraft(draftValue))
 	},
-	onSetUser: ( username, email, password ) => {
-		dispatch( register(username, email, password ));
+	onSetUser: ( name, email, password, tos, location, image, ) => {
+		dispatch( register(name, email, password, tos, location, image ));
 	},
 })
 
