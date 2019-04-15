@@ -8,9 +8,10 @@ const validate = values => {
 		errors.password = "The password is required"
 	} else if (!values.confirmPassword) {
 		errors.confirmPassword = "You need to confirm the password"
-	} else if (!values.tos) {
+	} else if (values.tos) {
 		errors.tos = 'You need to accept the Terms and Conditions'
 	}
+	return errors;
 }
 
 export default validate;

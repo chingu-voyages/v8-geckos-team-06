@@ -17,7 +17,7 @@ class MhubApi {
 				})
 		);
 
-	register = ( values ) => console.log('values', values) || (
+	register(values) {
 		this.axios.post('/users', {
 				"name": values.name,
 			 "email": values.email,
@@ -27,6 +27,6 @@ class MhubApi {
 			})
 		.then( response => response.data)
 		.catch( (error)=> {console.log(error)})
-		)
+		}
 }
 export default MhubApi;

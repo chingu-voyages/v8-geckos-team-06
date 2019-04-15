@@ -50,6 +50,10 @@ submitSucceeded ? (
 				<br></br>
 				<Link to='/login' className="btn btn-outline-alert btn-lg">Login</Link>
 			</div>
+			<br></br>
+   <div className="form-links">
+     <Link to="/">Home</Link>
+   </div>
 		</div>
 	)
 	export default RegisterForm = reduxForm({

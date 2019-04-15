@@ -4,6 +4,7 @@ import { login } from '../../actions'
 
 import { reduxForm, Field, SubmissionError } from 'redux-form'
 import validate from './validate'
+import { Link } from 'react-router-dom'
 
 const renderField = ({ input, label, type, meta: { touched, error}}) => (
 		<div>
@@ -33,6 +34,11 @@ submitSucceeded ? (
 					{error && <div className="alert alert-danger" role="alert">{error}</div>}
 					<br/>
 					<button type="submit" disabled={pristine || submitting} className="btn btn-outline-primary btn-lg">Log In</button>
+     <br></br>
+     <br></br>
+					<div className="form-links">
+      <Link to="/">Home</Link>
+     </div>
 				</form>
 			</div>
 	)

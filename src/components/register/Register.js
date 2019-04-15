@@ -11,10 +11,6 @@ const Register = ({ token }) => {
       <main className="Register">
           <h3 className="register-title">Register</h3>
           <RegisterForm />
-          <br></br>
-          <div className="form-links">
-            <Link to="/">Home</Link>
-          </div>
       </main>
     )
   } else {
