@@ -16,6 +16,14 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
     </div>
 )
 
+const Checkbox = ({ input, meta: { touched, error} }) => (
+		<div style={{border: touched && error ? "1px solid red" : "none", borderRadius: '10px', padding:'4px'}}>
+			<input type="checkbox" {...input} />
+			<label>Terms and Conditions</label>
+			{touched && error ? <p style={{ color: touched && error ? 'darkred' : 'transparent'}}>{error}</p> : null}
+		</div>
+	)
+
 let RegisterForm = ({ handleSubmit, submitSucceeded, pristine, reset, submitting, error }) =>
 submitSucceeded ? (
 	<Redirect to="/login" />
@@ -35,11 +43,10 @@ submitSucceeded ? (
 						<label htmlFor="ConfirmPassword">Confirm Password</label>
 						<Field name="ConfirmPassword" component={ renderField } type="password" required />
 
-						<label htmlFor="Terms">Terms & conditions</label>
-						<Field name="Terms&Cond" component={ renderField } type="checkbox" required />
+						<Field name="Terms" component={ Checkbox } type="checkbox" required />
 				 </div>
 				 <div>
-					 { error && <strong style={{color:'coral'}}>{ error }</strong> }
+					 { error && <strong style={{color:'darkred'}}>{ error }</strong> }
 				 </div>
 				 <br></br>
 				<button type="submit" disabled={ pristine || submitting } className="btn btn-outline-primary btn-lg">Register</button>
@@ -64,9 +71,9 @@ submitSucceeded ? (
 				throw new SubmissionError({
 				_error: 'Register Failed',
 				password: 'Wrong Password',
-				confirmPassword: 'Its not matching',
+				ConfirmPassword: 'Its not matching',
 				email: 'Enter a valid Email please',
-				tos: 'Need to accept the Terms and Conditios'
+				Terms: 'Need to accept the Terms and Conditios'
 			})
 			})
 		}
