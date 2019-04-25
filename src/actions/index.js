@@ -16,8 +16,8 @@ export const login = ( values ) => (dispatch, getState, api ) =>
 				dispatch({type: SAVE_TOKEN, token: res.token})
 			})
 
-export const register = ( values ) => (dispatch, getState, api) => 
-			api.register(values)
+export const register = ( values ) =>  (dispatch, getState, api) => 
+	api.register(values)
 			.then( res => {
 					dispatch({
 						type: SAVE_TOKEN,

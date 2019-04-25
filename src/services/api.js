@@ -4,9 +4,9 @@ class MhubApi {
 	constructor(props) {
 		this.axios = axios.create({
 			baseURL: 'http://localhost:7600',
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
+				// headers: {
+				// 	// 'Content-Type': 'multipart/form-data',
+				// },
 		});
 	}
 	login = ( values ) => console.log('values', values) || (
@@ -24,6 +24,7 @@ class MhubApi {
 			"name": values.name,
 			"email": values.email,
 			"password": values.password,
+			"confirmPassword": values.confirmPassword,
 			"terms": values.terms
 		})
 		)
