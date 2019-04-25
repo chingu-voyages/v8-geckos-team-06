@@ -17,7 +17,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 
 const Checkbox = ({ input, meta: { touched, error} }) => (
-		<div style={{border: touched && error ? "1px solid red" : "none", borderRadius: '10px', padding:'4px'}}>
+		<div style={{border: touched && error ? "1px solid darkred" : "none", borderRadius: '10px', padding:'4px'}}>
 			<input type="checkbox" {...input} />
 			<label>Terms and Conditions</label>
 			{touched && error ? <p style={{ color: touched && error ? 'darkred' : 'transparent'}}>{error}</p> : null}
@@ -41,15 +41,15 @@ submitSucceeded ? (
 						<Field name="password" component={ renderField } type="password"  required autoComplete="current-password" />
 				 
 						<label htmlFor="ConfirmPassword">Confirm Password</label>
-						<Field name="ConfirmPassword" component={ renderField } type="password" required />
+						<Field name="confirmPassword" component={ renderField } type="password" required />
 
-						<Field name="Terms" component={ Checkbox } type="checkbox" required />
+						<Field name="terms" component={ Checkbox } type="checkbox" required />
 				 </div>
 				 <div>
 					 { error && <strong style={{color:'darkred'}}>{ error }</strong> }
 				 </div>
 				 <br></br>
-				<button type="submit" disabled={ pristine || submitting } className="btn btn-outline-primary btn-lg">Register</button>
+				<button type="submit" disabled={ pristine  || submitting } className="btn btn-outline-primary btn-lg">Register</button>
 			</form>
 			<br></br>
 			<div>
@@ -67,11 +67,13 @@ submitSucceeded ? (
 		form: 'register',
 		validate,
 		onSubmit: (values, dispatch) => {
-			return dispatch(register(values)).catch(err =>{
+			console.log('valores', values)
+			return dispatch(register(values))
+			.catch(err =>{
 				throw new SubmissionError({
 				_error: 'Register Failed',
 				password: 'Wrong Password',
-				ConfirmPassword: 'Its not matching',
+				confirmPassword: 'Its not matching',
 				email: 'Enter a valid Email please',
 				Terms: 'Need to accept the Terms and Conditios'
 			})

@@ -10,20 +10,23 @@ export const logOut = (isLogged) => ({
 	type: LOG_OUT,
 	value: false,
 });
-
-
 export const login = ( values ) => (dispatch, getState, api ) =>
 			api.login( values )
 			.then( res => {
 				dispatch({type: SAVE_TOKEN, token: res.token})
 			})
 
-export const register = ( values ) => (dispatch, getState, api) =>
-			api.register( values )
+export const register = ( values ) => (dispatch, getState, api) => 
+			api.register(values)
 			.then( res => {
-				dispatch({type: SAVE_TOKEN, value: res.id})
-			})
-
+					dispatch({
+						type: SAVE_TOKEN,
+						value: res._id ? res._id : null
+					})
+			}, ( err => {
+				console.log('err',err);
+				console.log('VALOERROR',values);
+			}))
 export const addUser = ( values ) => (dispatch, getState, api) =>
 			api.addUser( values )
 			.then( res => {

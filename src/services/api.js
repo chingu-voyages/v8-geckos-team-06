@@ -1,15 +1,17 @@
 import axios from 'axios';
 
 class MhubApi {
-	constuctor(props) {
+	constructor(props) {
 		this.axios = axios.create({
 			baseURL: 'http://localhost:7600',
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			},
 		});
 	}
-
 	login = ( values ) => console.log('values', values) || (
 		this.axios.post('/auth', {
-				"name": values.name,
+				"email": values.email,
  			"password": values.password
 		}).then( response => response.data)
 				.catch( () => (error) => {
@@ -17,16 +19,15 @@ class MhubApi {
 				})
 		);
 
-	register(values) {
+	register = (values) =>  console.log( 'valuesFROMAPI', values) || (
 		this.axios.post('/users', {
-				"name": values.name,
-			 "email": values.email,
-			 "password": values.password,
-			 "tos": values.tos,
-			 "location": values.location
-			})
-		.then( response => response.data)
-		.catch( (error)=> {console.log(error)})
-		}
+			"name": values.name,
+			"email": values.email,
+			"password": values.password,
+			"terms": values.terms
+		})
+		)
+		.then( response => {console.log('Coming from server response.data: ', response.data)})
+		.catch( (error)=> {console.log('error api: ', error)});
 }
 export default MhubApi;

@@ -1,28 +1,22 @@
 import React from 'react';
 import './Signin.css';
 import LoginForm from './LoginForm.js';
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: ""
-    }
-  }
-
-
-  render() {
+const Login = ({ isLogged }) => {
+  if (!isLogged) {
     return (
       <main className="Signin">
         <h3 className="signin-title">Log In</h3>
         <LoginForm />
       </main>
     );
-
-  }
+  } else {
+    return (
+      <Redirect to='/dashboard' />
+      )
+    }
 }
 
 

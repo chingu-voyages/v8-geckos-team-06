@@ -12,13 +12,12 @@ const loggerMiddleware = store => next => action => {
 	console.groupEnd(action.type);
 	return returnValue
 }
-const mhubApiInstance = new MhubApi();
-console.log('Api Instance', mhubApiInstance.register);
+const api = new MhubApi();
 
 const composeEnhancers =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
 	rootReducer,
-	composeEnhancers(applyMiddleware(thunk.withExtraArgument(mhubApiInstance),loggerMiddleware))
+	composeEnhancers(applyMiddleware(thunk.withExtraArgument(api), loggerMiddleware))
 	)
 
 export default store;

@@ -3,7 +3,7 @@ import {
 	LOG_OUT
 } from '../constants/actionTypes.js'
 
-const initialStaste = false
+const initialStaste = false;
 
 const isLoggedReducer = (state=initialStaste,action) => {
 	switch (action.type) {
