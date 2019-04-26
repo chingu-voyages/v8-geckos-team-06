@@ -10,7 +10,7 @@ const validate = values => {
 		errors.email = "Invalid email adress"
 	} else if (!values.password) {
 		errors.password = "The password is required"
-	} else if (!values.ConfirmPassword) {
+	} else if (!values.confirmPassword) {
 		errors.ConfirmPassword = "You need to confirm the password"
 	} else if (!values.Terms) {
 		errors.Terms = 'You need to accept the Terms and Conditions'

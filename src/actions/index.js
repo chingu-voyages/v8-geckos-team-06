@@ -11,9 +11,10 @@ export const logOut = (isLogged) => ({
 	value: false,
 });
 export const login = ( values ) => (dispatch, getState, api ) =>
-			api.login( values )
+			api.login(values)
 			.then( res => {
-				dispatch({type: SAVE_TOKEN, token: res.token})
+				console.log('Token: ', res)
+				dispatch({type: SAVE_TOKEN, token: res});
 			})
 
 export const register = ( values ) =>  (dispatch, getState, api) => 

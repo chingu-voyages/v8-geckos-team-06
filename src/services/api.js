@@ -9,11 +9,12 @@ class MhubApi {
 				// },
 		});
 	}
+
 	login = ( values ) => console.log('values', values) || (
 		this.axios.post('/auth', {
 				"email": values.email,
  			"password": values.password
-		}).then( response => response.data)
+		}).then( response => response.data.token)
 				.catch( () => (error) => {
 					console.error(error);
 				})
