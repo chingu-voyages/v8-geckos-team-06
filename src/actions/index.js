@@ -2,7 +2,9 @@ import {
 	ADD_USER,
 	LOG_OUT,
 	SAVE_TOKEN,
-	CHANGE_DRAFT
+	SET_ID,
+	CHANGE_DRAFT,
+	GET_USER
 } from '../constants/actionTypes.js';
 
 
@@ -13,9 +15,15 @@ export const logOut = (isLogged) => ({
 export const login = ( values ) => (dispatch, getState, api ) =>
 			api.login(values)
 			.then( res => {
-				console.log('Token: ', res)
-				dispatch({type: SAVE_TOKEN, token: res});
+				dispatch({type: SAVE_TOKEN, token: res.token});
+				dispatch({type: SET_ID, userId: res.id});
 			})
+
+export const getUserData = ( values ) => (dispatch, getState, api) => 
+	api.checkUser(values)
+		.then( res => {
+			dispatch({ type: GET_USER, user: res.user})
+	});
 
 export const register = ( values ) =>  (dispatch, getState, api) => 
 	api.register(values)

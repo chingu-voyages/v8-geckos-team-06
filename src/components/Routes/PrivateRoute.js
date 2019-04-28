@@ -6,7 +6,7 @@ import DashBoardContainer from '../../containers/DashBoardContainer.js';
 const PrivateRoute = ( { path, component, isLogged} ) => {
 		return (
 			<div>
-				 {isLogged ? <Route path={ path } component={DashBoardContainer} /> : <Redirect to="/" />}
+				 {isLogged ? <Route path={ path } component={DashBoardContainer} /> : <Redirect to="/login" />}
 			</div>
 			)
 }

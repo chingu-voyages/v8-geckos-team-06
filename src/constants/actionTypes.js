@@ -1,5 +1,7 @@
 export const ADD_USER = 'ADD_USER';
+export const GET_USER = 'GET_USER';
 export const AUTH_USER = 'AUTH_USER'
+export const SET_ID = "SET_ID";
 
 export const CHANGE_DRAFT = 'CHANGE_DRAFT';
 ;

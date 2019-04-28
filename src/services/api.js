@@ -4,17 +4,14 @@ class MhubApi {
 	constructor(props) {
 		this.axios = axios.create({
 			baseURL: 'http://localhost:7600',
-				// headers: {
-				// 	// 'Content-Type': 'multipart/form-data',
-				// },
 		});
 	}
 
-	login = ( values ) => console.log('values', values) || (
-		this.axios.post('/auth', {
+	login = async ( values ) => console.log('values', values) || (
+		await this.axios.post('/auth', {
 				"email": values.email,
  			"password": values.password
-		}).then( response => response.data.token)
+		}).then( response => console.log('Login response: ', response.data) || response.data )
 				.catch( () => (error) => {
 					console.error(error);
 				})
@@ -31,5 +28,15 @@ class MhubApi {
 		)
 		.then( response => {console.log('Coming from server response.data: ', response.data)})
 		.catch( (error)=> {console.log('error api: ', error)});
-}
+
+	checkUser = async (id , token ) => console.log('User Id coming from API: ', id) || (
+		await this.axios.head(`/user/${id}`, {
+			headers: {
+							"Content-Type": "application/json",
+							"Authorization": "Bearer" + token
+					}
+				})
+		.then( response => response.data )
+		).catch((error)=> console.log('error:', error) );
+}	
 export default MhubApi;
