@@ -9,15 +9,15 @@ import { Link } from 'react-router-dom'
 const renderField = ({ input, label, type, meta: { touched, error}}) => (
 		<div>
 			<div>
-				 <input  {...input} placeholder={label}type={type}/>
-				 <div style={{color: 'red'}}>
+				<input  {...input} placeholder={label}type={type}/>
+				<div style={{color: 'red'}}>
 				 	{touched && error && <span>{error}</span>}
 				 </div>
 			</div>
 		</div>
 	)
 
-let LoginForm = ({ handleSubmit, submitSucceeded, pristine, reset, submitting, error}) => 
+let LoginForm = ({ handleSubmit, submitSucceeded, pristine, reset, submitting, error}) =>
 submitSucceeded ? (
 	<Redirect to="/dashboard" />
 	) : (
@@ -33,12 +33,12 @@ submitSucceeded ? (
 					</div>
 					{error && <div className="alert alert-danger" role="alert">{error}</div>}
 					<br/>
-					<button type="submit" disabled={pristine || submitting} className="btn btn-outline-primary btn-lg">Log In</button>
-     <br></br>
-     <br></br>
+					<button type="submit" disabled={pristine || submitting} className={ pristine ? `login-btn btn-disabled` : `login-btn`} >Log In</button>
+					<br></br>
+					<br></br>
 					<div className="form-links">
-      <Link to="/">Home</Link>
-     </div>
+						<Link className="form-link" to="/">Home</Link>
+					</div>
 				</form>
 			</div>
 	)

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
-    <div> 
+    <div>
 		<input { ...input } placeholder={ label } type={ type }/>
     	<div>
       		{ touched && error && <span style={{ color:'red' }}>{ error }</span>}
@@ -29,39 +29,39 @@ submitSucceeded ? (
 	<Redirect to="/login" />
 	) : (
 			<div>
-			<form  onSubmit={ handleSubmit } autoComplete="off">
-				 <div>
+        <form  onSubmit={ handleSubmit } autoComplete="off">
+          <div>
 				 		<label htmlFor="name"  >Name</label>
 						<Field name="name" component={ renderField } required type="text"  />
-				 
+
 				 		<label htmlFor="email">Email</label>
 						<Field name="email" component={ renderField } type="email" />
-				
+
 						<label htmlFor="password">Password</label>
 						<Field name="password" component={ renderField } type="password"  required autoComplete="current-password" />
-				 
+
 						<label htmlFor="ConfirmPassword">Confirm Password</label>
 						<Field name="confirmPassword" component={ renderField } type="password" required />
 
 						<Field name="terms" component={ Checkbox } type="checkbox" required />
-				 </div>
-				 <div>
-					 { error && <strong style={{color:'darkred'}}>{ error }</strong> }
-				 </div>
-				 <br></br>
-				<button type="submit" disabled={ pristine  || submitting } className="btn btn-outline-primary btn-lg">Register</button>
-			</form>
-			<br></br>
-			<div>
-				<label htmlFor="Link" style={{color:'goldenrod'}}>already registered?</label>
-				<br></br>
-				<Link to='/login' className="btn btn-outline-alert btn-lg">Login</Link>
-			</div>
-			<br></br>
-   <div className="form-links">
-     <Link to="/">Home</Link>
-   </div>
-		</div>
+          </div>
+          <div>
+            { error && <strong style={{color:'darkred'}}>{ error }</strong> }
+          </div>
+          <br></br>
+          <button type="submit" disabled={ pristine  || submitting } className={ pristine ? `register-btn btn-disabled` : `register-btn`}>Register</button>
+        </form>
+        <br></br>
+        <div>
+          <label htmlFor="Link" style={{color:'goldenrod'}}>already registered?</label>
+          <br></br>
+          <Link to='/login' className="form-link">Login</Link>
+        </div>
+        <br></br>
+        <div className="form-links">
+          <Link className="form-link" to="/">Home</Link>
+        </div>
+      </div>
 	)
 	export default RegisterForm = reduxForm({
 		form: 'register',

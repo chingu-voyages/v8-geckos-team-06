@@ -97,6 +97,12 @@ label {
   color: #fff;
 }
 
+.btn-disabled {
+  border-color: #5f7868;
+  color: #5f7868;
+  pointer-events: none;
+}
+
 .form-links {
 
 }
