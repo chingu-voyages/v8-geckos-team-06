@@ -1,5 +1,6 @@
 import {
-	SIGN_OK
+	SIGN_OK,
+	
 } from '../constants/actionTypes.js';
 const initialState = '';
 const userIdReducer = (state=initialState,action) => {
