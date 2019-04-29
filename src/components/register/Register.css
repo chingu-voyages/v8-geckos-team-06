@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   background: var(--bgcolor);
 }
@@ -22,21 +23,6 @@
   color: var(--blue);
 }
 
-.pill-wrapper {
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.pill-icon {
-  width: 60px;
-  height: 20px;
-  border: 2px solid var(--blue);
-  border-radius: 15px;
-  background-image: linear-gradient(to right, var(--blue) 50%, #fff 50%);
-  transform: rotate(-45deg);
-}
-
 
 
 .input-container {
@@ -49,8 +35,7 @@
 .form-input {
   display: flex;
   padding: 3px 10px;
-  font-size: 1.1em;
-  margin: 5px 0;
+  font-size: 1em;
   border: none;
   background-color: var(--bgcolor);
   border-bottom: 2px solid #999;
@@ -68,23 +53,23 @@
   color: var(--blue);
 }
 
-input::placeholder {
+.form-input::placeholder {
   font-weight: 100;
   opacity: .5;
 }
 
-input::-webkit-input-placeholder {
+.form-input::-webkit-input-placeholder {
   font-weight: 100;
   opacity: .5;
 }
 
-input:-ms-input-placeholder {
+.form-input:-ms-input-placeholder {
   font-weight: 100;
   opacity: .5;
 }
 
-label {
-  margin: 10px;
+.form-input label {
+  margin: 5px;
 }
 
 
@@ -198,12 +183,25 @@ label {
 }
 
 
-
+/* Invalid Input messages */
+.invalid span {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
 
 
 /* Media Queries */
 
 @media (min-width: 500px) {
+  .Signin {
+    flex-direction: row;
+  }
+
+  .register-form {
+    margin-bottom: 0;
+  }
+
   .sign_up {
     /* align-items: flex-end; */
   }
@@ -213,9 +211,9 @@ label {
   }
 
   .input-container {
-    flex-direction: row;
+    /* flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    width: 100%; */
   }
   .form-input {
     display: block;
@@ -228,4 +226,20 @@ label {
   .tos {
     top: 13.33333px;
   }
+}
+
+/* PIll icon */
+.pill-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.pill-icon {
+  width: 60px;
+  height: 20px;
+  border: 2px solid var(--blue);
+  border-radius: 15px;
+  background-image: linear-gradient(to right, var(--blue) 50%, #fff 50%);
+  transform: rotate(-45deg);
 }

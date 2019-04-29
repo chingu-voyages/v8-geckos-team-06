@@ -1,7 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { register } from '../../actions'
-
+import './Register.css';
 import { reduxForm, Field, SubmissionError } from 'redux-form'
 import validate from './validate'
 import { Link } from 'react-router-dom'
@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
-		<input { ...input } placeholder={ label } type={ type }/>
-    	<div>
+      <input className="form-input" { ...input } placeholder={ label } type={ type }/>
+    	<div className="invalid">
       		{ touched && error && <span style={{ color:'red' }}>{ error }</span>}
       	</div>
     </div>
@@ -29,21 +29,33 @@ submitSucceeded ? (
 	<Redirect to="/login" />
 	) : (
 			<div>
-        <form  onSubmit={ handleSubmit } autoComplete="off">
-          <div>
-				 		<label htmlFor="name"  >Name</label>
-						<Field name="name" component={ renderField } required type="text"  />
+        <form onSubmit={ handleSubmit } autoComplete="off">
+          <div className="register-form">
 
-				 		<label htmlFor="email">Email</label>
-						<Field name="email" component={ renderField } type="email" />
+            <div className="input-container">
+              <label htmlFor="name"  >Name</label>
+              <Field name="name" component={ renderField } required type="text"  />
+            </div>
 
-						<label htmlFor="password">Password</label>
-						<Field name="password" component={ renderField } type="password"  required autoComplete="current-password" />
+            <div className="input-container">
+              <label htmlFor="email">Email</label>
+              <Field name="email" component={ renderField } type="email" />
+            </div>
 
-						<label htmlFor="ConfirmPassword">Confirm Password</label>
-						<Field name="confirmPassword" component={ renderField } type="password" required />
+            <div className="input-container">
+              <label htmlFor="password">Password</label>
+              <Field name="password" component={ renderField } type="password"  required autoComplete="current-password" />
+            </div>
 
-						<Field name="terms" component={ Checkbox } type="checkbox" required />
+            <div className="input-container">
+              <label htmlFor="ConfirmPassword">Confirm Password</label>
+              <Field name="confirmPassword" component={ renderField } type="password" required />
+            </div>
+
+            <div className="tos-container">
+              <Field name="terms" component={ Checkbox } type="checkbox" required />
+            </div>
+
           </div>
           <div>
             { error && <strong style={{color:'darkred'}}>{ error }</strong> }
