@@ -1,15 +1,11 @@
 import React from 'react';
 import MedsList from '../Meds/MedsList.js';
 
-const handleOnClick = (e) => {
-	e.preventDefault();
-	
-}
 
 const Dashboard = ({userId, token, isLogged, user}) => { 
   return (
   	<div className="container-fluid">
-  		<button onClick={handleOnClick}>LogOut</button>
+  		<a href="/">LogOut</a>
 					<h1>THE DASHBOARD</h1>
 					<h3>Welcome User: {userId}</h3>
 					<hr />
