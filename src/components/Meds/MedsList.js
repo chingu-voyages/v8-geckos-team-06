@@ -17,7 +17,7 @@ class MedsList extends Component {
 			<div>
 				{ meds && meds.map((e) => {
 					return <div key={e}>
-						<p>{e}</p>
+						<p style={{color:'darkblue'}}>{e}</p>
 					</div>
 					})}
 			</div>

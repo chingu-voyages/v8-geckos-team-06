@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Dashboard from '../components/Dashboard/Dashboard.js';
 import { getDraft, getisLogged, getToken, getUserId, getUser } from '../selectors';
-import MhubApi from '../services/api.js'
+import { logOut } from '../actions';
+
 
 
 const mapStateToProps = state => ({
@@ -13,8 +14,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
-	})
+onLogOut: () => {
+	console.log();
+	dispatch( logOut() );
+	}
+})
 
 
 

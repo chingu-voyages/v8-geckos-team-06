@@ -7,7 +7,9 @@ const initialState = ''
 const userReducer = (state= initialState, action) => {
 	switch (action.type) {
 		case GET_USER:
-			return action.user
+			return [
+			action.user
+			]
 		default:
 			return state
 	}

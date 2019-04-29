@@ -2,11 +2,19 @@ import React from 'react';
 import MedsList from '../Meds/MedsList.js';
 
 
-const Dashboard = ({userId, token, isLogged, user}) => { 
+const Dashboard = ({userId, token, isLogged, onLogOut, user}) => { 
   return (
   	<div className="container-fluid">
 					<h1>THE DASHBOARD</h1>
 					<h3>Welcome User: {userId}</h3>
+					<button
+								className="btn btn-outline-danger btn-lg"
+								onClick={ e => {
+									e.preventDefault()
+									onLogOut()
+								}}
+							>Log Out
+							</button>
 					<hr />
 				<div className="Searchbar">
 					<input type="search" placeholder="Search Med"/>
