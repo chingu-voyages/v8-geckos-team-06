@@ -12,8 +12,9 @@
   flex-direction: column;
   align-items: center;
   border: none;
-  padding: 20px;
-  margin-bottom: 1em;
+  padding-top: 20px;
+  /* margin-bottom: 1em; */
+  color: #444;
 }
 
 .register-title {
@@ -31,6 +32,9 @@
   flex-direction: column;
 }
 
+.input-container label, .tos-container label {
+  font-weight: 600;
+}
 
 .form-input {
   display: flex;
@@ -107,12 +111,13 @@
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  position: relative;
+  /* position: relative; */
   left: 0;
   bottom: 0;
   right: 0;
   width: 30px;
   height: 30px;
+  margin: 10px;
   background: var(--bgcolor);
   border: 2px solid var(--blue);
   border-radius: 5px;
@@ -194,8 +199,12 @@
 /* Media Queries */
 
 @media (min-width: 500px) {
-  .Signin {
+  .Register {
     flex-direction: row;
+  }
+
+  .register-title {
+    margin-right: 3em; 
   }
 
   .register-form {
@@ -220,11 +229,13 @@
   }
 
   .tos-container {
-    display: block;
+    /* display: block; */
+    flex-direction: row;
   }
 
   .tos {
     top: 13.33333px;
+    order: -1;
   }
 }
 

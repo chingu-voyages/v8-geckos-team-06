@@ -17,8 +17,8 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 
 const Checkbox = ({ input, meta: { touched, error} }) => (
-		<div style={{border: touched && error ? "1px solid darkred" : "none", borderRadius: '10px', padding:'4px'}}>
-			<input type="checkbox" {...input} />
+		<div className="tos-container" style={{border: touched && error ? "1px solid darkred" : "none", borderRadius: '10px', padding:'4px'}}>
+			<input className="tos" type="checkbox" {...input} />
 			<label>Terms and Conditions</label>
 			{touched && error ? <p style={{ color: touched && error ? 'darkred' : 'transparent'}}>{error}</p> : null}
 		</div>
@@ -64,14 +64,14 @@ submitSucceeded ? (
           <button type="submit" disabled={ pristine  || submitting } className={ pristine ? `register-btn btn-disabled` : `register-btn`}>Register</button>
         </form>
         <br></br>
-        <div>
+        <div className="form-links">
           <label htmlFor="Link" style={{color:'goldenrod'}}>already registered?</label>
           <br></br>
           <Link to='/login' className="form-link">Login</Link>
         </div>
         <br></br>
         <div className="form-links">
-          <Link className="form-link" to="/">Home</Link>
+          <Link to="/" className="form-link">Home</Link>
         </div>
       </div>
 	)

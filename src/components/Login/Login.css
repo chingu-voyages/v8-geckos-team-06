@@ -32,6 +32,11 @@
   flex-direction: column;
 }
 
+.login-input-container label {
+  font-weight: 600;
+  color: #444;
+}
+
 .login-form-input {
   display: flex;
   padding: 3px 10px;
@@ -136,6 +141,10 @@
 @media (min-width: 500px) {
   .Signin {
     flex-direction: row;
+  }
+
+  .signin-title {
+    margin-right: 2em;
   }
 
   .sign_in {
