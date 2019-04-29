@@ -16,8 +16,8 @@ class MedsList extends Component {
 		return (
 			<div>
 				{ meds && meds.map((e) => {
-					return <div>
-						<p>e</p>
+					return <div key={e}>
+						<p>{e}</p>
 					</div>
 					})}
 			</div>

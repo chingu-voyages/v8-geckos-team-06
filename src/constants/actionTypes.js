@@ -14,4 +14,5 @@ export const LOG_OUT = 'LOG_OUT';
 
 export const SAVE_TOKEN = 'SAVE_TOKEN';
 export const ER_TOKEN = 'ER_TOKEN';
+
 export const SIGN_OK = 'SIGN_OK';
