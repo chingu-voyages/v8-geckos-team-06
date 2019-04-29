@@ -5,7 +5,6 @@ import MedsList from '../Meds/MedsList.js';
 const Dashboard = ({userId, token, isLogged, user}) => { 
   return (
   	<div className="container-fluid">
-  		<a href="/">LogOut</a>
 					<h1>THE DASHBOARD</h1>
 					<h3>Welcome User: {userId}</h3>
 					<hr />

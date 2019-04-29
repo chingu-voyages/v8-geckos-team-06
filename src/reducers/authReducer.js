@@ -1,20 +1,17 @@
 import { LOGIN_SUCCESS, SAVE_TOKEN, LOG_OUT } from '../constants/actionTypes.js';
 
-const initialState = {
-	token: localStorage.access_token
-}
+const initialState = localStorage.access_token || '';
 
 const authReducer = (state=initialState, action) => {
 	switch( action.type) {
 		case LOGIN_SUCCESS:
-			return [
-			action.value
-			]
+			return action.token
 		case SAVE_TOKEN:
-		localStorage.setItem('access_token');
+			localStorage.setItem('access_token', action.token);
 			return action.token;
 		case LOG_OUT:
-			return '';
+			localStorage.removeItem('access_token');
+			return	''	
 		default:
 			return state;
 		}
