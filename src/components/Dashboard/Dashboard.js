@@ -1,18 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Dashboard extends Component {
-
-	componentDidMount() {
-		const { getUserData} = this.props
-		getUserData();
-	}
-
-
-	render() {
-
-		const { userId, token, isLogged } = this.props
-		return (
-				<div className="container-fluid">
+const Dashboard = ({userId, token, isLogged, user}) => {
+  return (
+  	<div className="container-fluid">
 				<div className="sidePanel">
 					SidePanel
 				</div>
@@ -30,8 +20,6 @@ class Dashboard extends Component {
 					<h3>Welcome User: {userId}</h3>
 				</div>
 			</div>
-		);
-	}
+  )
 }
-
 export default Dashboard;
