@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   background: var(--bgcolor);
 }
@@ -35,7 +36,6 @@
   display: flex;
   padding: 3px 10px;
   font-size: 1.1em;
-  margin: 5px 0;
   border: none;
   background-color: var(--bgcolor);
   border-bottom: 2px solid #999;
@@ -53,23 +53,23 @@
   color: var(--green);
 }
 
-input::placeholder {
+.login-form-input::placeholder {
   font-weight: 100;
   opacity: .5;
 }
 
-input::-webkit-input-placeholder {
+.login-form-input::-webkit-input-placeholder {
   font-weight: 100;
   opacity: .5;
 }
 
-input:-ms-input-placeholder {
+.login-form-input:-ms-input-placeholder {
   font-weight: 100;
   opacity: .5;
 }
 
-label {
-  margin: 10px;
+.login-form-input label {
+  margin: 5px;
 }
 
 .name, .email, .password, .confirm-password {
@@ -123,14 +123,31 @@ label {
   color: var(--blue);
 }
 
+
+/* Invalid Input messages */
+.invalid span {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
 /* Media Queries */
 
 @media (min-width: 500px) {
-  .login-input-container {
+  .Signin {
     flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
   }
+
+  .sign_in {
+    margin-bottom: 0;
+  }
+
+  .login-input-container {
+    /* flex-direction: row;
+    justify-content: space-between;
+    width: 100%; */
+  }
+
   .login-form-input {
     display: block;
   }

@@ -9,10 +9,11 @@ import { Link } from 'react-router-dom'
 const renderField = ({ input, label, type, meta: { touched, error}}) => (
 		<div>
 			<div>
-				<input  {...input} placeholder={label}type={type}/>
-				<div style={{color: 'red'}}>
+				<input className="login-form-input"
+					{...input} placeholder={label} type={type}/>
+				<div className="invalid" style={{color: 'red'}}>
 				 	{touched && error && <span>{error}</span>}
-				 </div>
+				</div>
 			</div>
 		</div>
 	)
@@ -21,13 +22,13 @@ let LoginForm = ({ handleSubmit, submitSucceeded, pristine, reset, submitting, e
 submitSucceeded ? (
 	<Redirect to="/dashboard" />
 	) : (
-			<div>
+			<div className="sign_in">
 				<form onSubmit={handleSubmit} autoComplete="off">
-					<div>
+					<div className="login-input-container">
 						<label htmlFor="email">Email</label>
 						<Field name="email" component={renderField} type="email" placeholder="email" />
 					</div>
-					<div>
+					<div className="login-input-container">
 						<label htmlFor="password">Password</label>
 						<Field name="password" component={renderField} type="password" placeholder="password"/>
 					</div>
