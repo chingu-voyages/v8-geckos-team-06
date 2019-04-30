@@ -17,6 +17,7 @@
   border: none;
   padding: 20px;
   margin-bottom: 1em;
+
 }
 
 .signin-title {
@@ -39,8 +40,10 @@
 
 .login-form-input {
   display: flex;
-  padding: 3px 10px;
+  width: 100%;
+  padding: 3px 0;
   font-size: 1.1em;
+  text-align: center;
   border: none;
   background-color: var(--bgcolor);
   border-bottom: 2px solid #999;

@@ -1,0 +1,15 @@
+.Dashboard {
+  display: grid;
+  grid-template-columns: minmax(200px, 25vw) 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "aside main main main"
+    "aside main main main"
+    "aside main main main"
+    "footer footer footer footer";
+}
+
+.Dashboard h1 {
+  grid-area: ""
+}
