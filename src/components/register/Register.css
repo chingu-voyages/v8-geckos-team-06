@@ -87,7 +87,7 @@
 }
 
 .tos-container {
-  margin: 10px;
+  margin: .5em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,6 +209,7 @@
 
   .register-title {
     margin-right: 3em;
+    margin-left: 0;
   }
 
   .register-form {
@@ -240,6 +241,7 @@
   .tos {
     top: 13.33333px;
     order: -1;
+    margin-left: 0;
   }
 }
 

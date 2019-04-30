@@ -4,21 +4,29 @@
   grid-template-rows: auto;
   grid-template-areas:
     "header header header header"
-    "aside main main main"
-    "aside main main main"
-    "aside main main main"
+    "aside1 main main main"
+    "aside2 main main main"
+    "aside3 main main main"
     "footer footer footer footer";
 }
 
 .item {
+  background-color: honeydew;
 }
 
 .header {
   grid-area: header;
+  background-color: blue;
 }
 
 .Searchbar {
-  grid-area: main;
+  grid-area: aside1;
+  background-color: orange;
+
+}
+
+.sidePanel {
+  grid-area: aside2;
 }
 
 .listofMeds {
@@ -30,8 +38,12 @@
 }
 
 .meds-list {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-gap: 5px 10px;
+  grid-gap: 5px 10px; */
+  display: flex;
+}
+
+.med-card {
 
 }
