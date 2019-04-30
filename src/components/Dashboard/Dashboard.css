@@ -1,4 +1,4 @@
-.Dashboard {
+.grid-container {
   display: grid;
   grid-template-columns: minmax(200px, 25vw) 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -10,6 +10,28 @@
     "footer footer footer footer";
 }
 
-.Dashboard h1 {
-  grid-area: ""
+.item {
+}
+
+.header {
+  grid-area: header;
+}
+
+.Searchbar {
+  grid-area: main;
+}
+
+.listofMeds {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.meds-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 5px 10px;
+
 }
