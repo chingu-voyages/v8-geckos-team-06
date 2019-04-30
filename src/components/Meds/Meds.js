@@ -29,14 +29,15 @@ getMedsData() {
 		const { meds } = this.state;
 		console.log('This are the meds: ', meds)
 		return (
-			<div>
+			<div className="MedsList">
 				<h3>Medication List</h3>
-				<button onClick={this.getMedsData}>Bring Meds</button>
+				<button className="getmeds-btn" onClick={this.getMedsData}>Bring Meds</button>
+
 				{meds && <MedsList meds={meds}/>}
-				<br></br>
-				<hr/>
+
 				<h5>Do you want to donate a Med?</h5>
 				<MedsForm />
+
 			</div>
 		);
 	}

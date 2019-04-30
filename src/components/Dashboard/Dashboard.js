@@ -5,12 +5,12 @@ import './Dashboard.css';
 
 const Dashboard = ({userId, token, isLogged, onLogOut, user}) => {
   return (
-  	<div className="container-fluid grid-container">
+  	<div className="container-fluid grid-container Dashboard">
       <header className="item header">
         <h1>THE DASHBOARD</h1>
         <h3>Welcome User: {userId}</h3>
         <button
-          className="btn btn-outline-danger btn-lg"
+          className="logout-btn"
           onClick={ e => {
             e.preventDefault()
             onLogOut()
@@ -18,15 +18,19 @@ const Dashboard = ({userId, token, isLogged, onLogOut, user}) => {
         >Log Out
         </button>
       </header>
-      <hr />
-      <div className="item Searchbar">
-        <input type="search" placeholder="Search Med"/>
-      </div>
-      <div className="item sidePanel">
-        SidePanel
-      </div>
-      <div className="item listofMeds">
-        <Meds token={token} userId={userId} />
+      {/* <hr /> */}
+
+      <div className="dash-main-grid">
+        <div className="item sidePanel">
+          SidePanel
+          <div className="Searchbar">
+            <input type="search" placeholder="Search Med"/>
+          </div>
+        </div>
+        <div className="item listofMeds">
+          <Meds token={token} userId={userId} />
+        </div>
+
       </div>
       <div className="item footer">
       </div>
