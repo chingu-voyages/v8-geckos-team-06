@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class MedsList extends Component {
-	state = {
-		meds: ['Cannabis', 'OIL CBD', 'LSD', 'XTZ']
-	}
-	render() {
-		const { meds } = this.state;
-		return (
-			<div>
-				{ meds && meds.map((e) => {
-					return <div key={e}>
-						<p style={{color:'darkblue'}}>{e}</p>
-					</div>
-					})}
-			</div>
-		);
-	}
+const MedsList = ({meds}) => {
+  return (
+    <div>
+    	{ meds && meds.map((med) => {
+    			return med.map((it)=> {
+    				return <div key={it.id} style={{width:'40%', background: 'lightgrey'}}>
+    					<h2 style={{color:'darkred'}}>{it.manufacturer}</h2>
+    					<p style={{color:'darkred'}}>{it.manufacturer}</p>
+    				</div>
+    			})
+    	})}
+    </div>
+  )
 }
 export default MedsList;

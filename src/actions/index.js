@@ -58,10 +58,6 @@ export const addMed = ( values ) => (dispatch, getState, api) =>
 				type: ADD_MED,
 				med: res.med
 			})
-			dispatch({
-				type:GET_MEDS,
-				meds: res.meds
-			})
 		})
 
 		export const getMed = (token) => (dispatch, getState, api) => 
@@ -69,7 +65,7 @@ export const addMed = ( values ) => (dispatch, getState, api) =>
 				.then (res => {
 					console.log('actioncreatorGETMED:', res);
 					dispatch({
-						type: GET_MED,
-						medsa: res.meds
+						type: GET_MEDS,
+						meds: res.meds
 					})
 				})

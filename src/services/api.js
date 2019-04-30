@@ -47,8 +47,9 @@ getMeds = (token) => (
  this.axios.get('/meds', {
 		headers: {
 			"Authorization": "Bearer" + token
-		}
-	}).then((response) => console.log('responseGETMEDS', response.data))
+		}})
+ 	.then((response) => console.log('responseGETMEDS', response.data) || response.data)
+ 	.catch((error) => console.log(error))
 	)
 
 
