@@ -1,6 +1,6 @@
 import Meds from '../components/Meds/Meds.js';
 
-import { addMed } from '../actions'
+import { addMed, getMed } from '../actions'
 
 import { connect } from 'react-redux'
 
@@ -15,6 +15,9 @@ const mapDispatchToProps = dispatch => ({
 	onSetMed: ( manufacturer, comercialName, name, dosage, units, expiration, owner ) => {
 		dispatch( addMed(manufacturer, comercialName, name, dosage, units, expiration, owner ));
 	},
+	onGetMed: (token) => {
+		dispatch( getMed(token));
+	}
 })
 
 export default connect( mapStateToProps, mapDispatchToProps)(Meds);

@@ -48,7 +48,7 @@ getMeds = (token) => (
 		headers: {
 			"Authorization": "Bearer" + token
 		}
-	}).then((response) => response.data)
+	}).then((response) => console.log('responseGETMEDS', response.data))
 	)
 
 

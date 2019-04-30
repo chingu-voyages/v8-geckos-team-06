@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 
 class MedsList extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			meds: ['Ibuprofeno', 'Metanfetamina', 'Cannabis']
-		};
+	state = {
+		meds: ['Cannabis', 'OIL CBD', 'LSD', 'XTZ']
 	}
-
 	render() {
 		const { meds } = this.state;
 		return (

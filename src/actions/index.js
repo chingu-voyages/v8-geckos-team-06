@@ -6,6 +6,7 @@ import {
 	CHANGE_DRAFT,
 	ADD_MED,
 	GET_MEDS,
+	GET_MED,
 	GET_USER
 } from '../constants/actionTypes.js';
 
@@ -52,6 +53,7 @@ export const changeDraft = (valueDraft) => ({
 export const addMed = ( values ) => (dispatch, getState, api) => 
 	api.addingMed( values )
 		.then ( res => {
+			console.log('res:', res)
 			dispatch({
 				type: ADD_MED,
 				med: res.med
@@ -61,3 +63,13 @@ export const addMed = ( values ) => (dispatch, getState, api) =>
 				meds: res.meds
 			})
 		})
+
+		export const getMed = (token) => (dispatch, getState, api) => 
+			api.getMeds(token)
+				.then (res => {
+					console.log('actioncreatorGETMED:', res);
+					dispatch({
+						type: GET_MED,
+						medsa: res.meds
+					})
+				})
