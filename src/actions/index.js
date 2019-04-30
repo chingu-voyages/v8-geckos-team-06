@@ -4,6 +4,8 @@ import {
 	SAVE_TOKEN,
 	SET_ID,
 	CHANGE_DRAFT,
+	ADD_MED,
+	GET_MEDS,
 	GET_USER
 } from '../constants/actionTypes.js';
 
@@ -46,3 +48,16 @@ export const changeDraft = (valueDraft) => ({
 	type: CHANGE_DRAFT,
 	value: valueDraft
 })
+
+export const addMed = ( values ) => (dispatch, getState, api) => 
+	api.addingMed( values )
+		.then ( res => {
+			dispatch({
+				type: ADD_MED,
+				med: res.med
+			})
+			dispatch({
+				type:GET_MEDS,
+				meds: res.meds
+			})
+		})

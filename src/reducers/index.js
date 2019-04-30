@@ -9,6 +9,8 @@ import userIdReducer from './userIdReducer';
 
 import userReducer from './userReducer';
 
+import medsReducer from './medsReducer.js';
+
 
 
 const rootReducer = combineReducers({
@@ -17,7 +19,8 @@ const rootReducer = combineReducers({
 	userId: userIdReducer,
 	user: userReducer,
 	isLogged: isLoggedReducer,
-	token: authReducer
+	token: authReducer,
+	meds: medsReducer
 })
 
 export default rootReducer;

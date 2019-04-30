@@ -5,7 +5,7 @@ import {
 
 const initialState = localStorage.isLogged || false;
 
-const isLoggedReducer = (state = initialState,action) => {
+const isLoggedReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SAVE_TOKEN:
 			localStorage.setItem('is_Logged', true);

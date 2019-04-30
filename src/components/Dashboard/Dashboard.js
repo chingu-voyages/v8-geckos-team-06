@@ -1,5 +1,5 @@
 import React from 'react';
-import MedsList from '../Meds/MedsList.js';
+import Meds from '../Meds/Meds.js';
 
 
 const Dashboard = ({userId, token, isLogged, onLogOut, user}) => { 
@@ -23,7 +23,7 @@ const Dashboard = ({userId, token, isLogged, onLogOut, user}) => {
 					SidePanel
 				</div>
 				<div className="listofMeds">
-					<MedsList />
+					<Meds token={token} userId={userId} />
 				</div>
 				<div>
 				</div>
