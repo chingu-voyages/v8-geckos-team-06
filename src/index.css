@@ -4,6 +4,11 @@
   --orange: #FFC759;
   --bgcolor: #eee;
 }
+
+html, body {
+  background-color: var(--bgcolor);
+}
+
 body {
   margin: 0;
   padding: 0;

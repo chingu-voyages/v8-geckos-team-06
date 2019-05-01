@@ -6,9 +6,8 @@ import './Dashboard.css';
 const Dashboard = ({userId, token, isLogged, onLogOut, user}) => {
   return (
   	<div className="container-fluid grid-container Dashboard">
-      <header className="item header">
-        <h1>THE DASHBOARD</h1>
-        <h3>Welcome User: {userId}</h3>
+      <nav className="dash-nav">
+        <h1 className="dash-title">Meds<span>HUB</span></h1>
         <button
           className="logout-btn"
           onClick={ e => {
@@ -17,6 +16,10 @@ const Dashboard = ({userId, token, isLogged, onLogOut, user}) => {
           }}
         >Log Out
         </button>
+      </nav>
+      <header className="item header">
+        <h3>Hi <span>{userId}!</span></h3>
+        <h3>Welcome to your Dashboard</h3>
       </header>
       {/* <hr /> */}
 
