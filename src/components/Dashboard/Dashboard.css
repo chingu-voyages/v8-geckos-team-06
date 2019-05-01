@@ -101,16 +101,16 @@
   margin: 1em;
   padding: 8px 15px;
   background: none;
-  border: 2px solid darkred;
+  border: 2px solid var(--green);
   border-radius: 25px;
   font-size: 1em;
   font-weight: 600;
-  color: darkred;
+  color: var(--green);
   transition: all 200ms ease;
 }
 
 .getmeds-btn:hover, .getmeds-btn:focus {
-  background: darkred;
+  background: var(--green);
   color: #fff;
   padding: 8px 20px;
 }
@@ -125,6 +125,7 @@
 .med-card {
   background-color: #ccc;
   filter: grayscale(1);
+  border-radius: 5px;
   transition: all 200ms ease-in;
 }
 

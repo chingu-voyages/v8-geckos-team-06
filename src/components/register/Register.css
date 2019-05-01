@@ -95,7 +95,13 @@
 
 .tos-container label {
   order: -1;
-
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.tos-container label:hover {
+  color: var(--blue);
+  /* text-decoration: underline; */
+  box-shadow: 0 2px 0 0 var(--blue);
 }
 
 .tos-container label span {
@@ -197,6 +203,11 @@
   margin: 5px;
   display: flex;
   justify-content: center;
+}
+
+/* MODAL TINT */
+.tint {
+  background-color: #333;
 }
 
 

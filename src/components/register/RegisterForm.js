@@ -19,7 +19,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 const Checkbox = ({ input, meta: { touched, error} }) => (
 		<div className="tos-container" style={{border: touched && error ? "1px solid darkred" : "none", borderRadius: '10px', padding:'4px'}}>
 			<input className="tos" type="checkbox" {...input} />
-			<label>Terms and Conditions</label>
+			<label onClick={() => {console.log('clocckkckc')}}>Terms and Conditions</label>
 			{touched && error ? <p style={{ color: touched && error ? 'darkred' : 'transparent'}}>{error}</p> : null}
 		</div>
 	)
