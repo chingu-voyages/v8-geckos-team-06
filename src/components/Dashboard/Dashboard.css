@@ -139,6 +139,9 @@
   filter: grayscale(0);
   box-shadow: 0 2px 10px -2px #333;
 }
+.med-form {
+  width: 50%;
+}
 
 @media (max-width: 800px) {
   .header {

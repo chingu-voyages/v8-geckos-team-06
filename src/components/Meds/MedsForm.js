@@ -24,7 +24,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 let MedsForm = ({ handleSubmit, submitSucceeded, pristine, reset, submitting, error }) =>
 !submitSucceeded ? (
 			<div>
-        <form onSubmit={ handleSubmit } autoComplete="off">
+        <form onSubmit={ handleSubmit } autoComplete="off" style={{width:'50%'}}>
           <div className="meds-form">
             <div className="">
               <label htmlFor="manufacturer" >Manufacturer</label>
