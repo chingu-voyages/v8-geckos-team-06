@@ -20,3 +20,4 @@ export const SIGN_OK = 'SIGN_OK';
 export const ADD_MED = 'ADD_MED';
 export const GET_MEDS = 'GET_MEDS';
 export const GET_MED = 'GET_MED';
+export const MED_SAVE_SUCCESS = 'MED_SAVE_SUCCESS'

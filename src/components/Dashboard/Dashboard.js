@@ -33,7 +33,6 @@ class Dashboard extends Component {
     return (
       <div className="container-fluid grid-container Dashboard">
       <nav className="dash-nav">
-        <h1><span style={{color: 'darkblue'}}>{user && user.name}</span></h1>
         <h1 className="dash-title">Meds<span>HUB</span></h1>
         <button
           className="logout-btn"
@@ -49,7 +48,7 @@ class Dashboard extends Component {
       <br />
       <header className="item header">
         <h3>Welcome to your Dashboard</h3>
-        <p>{user && user.email }</p>
+        <h4 style={{color: 'darkblue', fontSize: '2em'}}>{user && user.name}</h4>
       </header>
       {/* <hr /> */}
 
