@@ -60,18 +60,14 @@ submitSucceeded ? (
           <div>
             { error && <strong style={{color:'darkred'}}>{ error }</strong> }
           </div>
-          <br></br>
           <button type="submit" disabled={ pristine  || submitting } className={ pristine ? `register-btn btn-disabled` : `register-btn`}>Register</button>
         </form>
-        <br></br>
         <div className="form-links">
-          <label htmlFor="Link" style={{color:'goldenrod'}}>already registered?</label>
-          <br></br>
+          <label htmlFor="Link" className="form-link-label">already registered?</label>
           <Link to='/login' className="form-link">Login</Link>
-        </div>
-        <br></br>
-        <div className="form-links">
           <Link to="/" className="form-link">Home</Link>
+        </div>
+        <div className="form-links">
         </div>
       </div>
 	)
