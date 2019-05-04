@@ -22,58 +22,54 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 // 	)
 
 let MedsForm = ({ handleSubmit, submitSucceeded, pristine, reset, submitting, error }) =>
-!submitSucceeded ? (
-			<div>
-        <form onSubmit={ handleSubmit } autoComplete="off" style={{width:'50%'}}>
-          <div className="meds-form">
-            <div className="">
-              <label htmlFor="manufacturer" >Manufacturer</label>
-              <Field name="manufacturer" component={ renderField } required type="text"  />
-            </div>
-
-            <div className="">
-              <label htmlFor="comercialName">Comercial Name</label>
-              <Field name="comercialName" component={ renderField } type="text" />
-            </div>
-
-             <div className="">
-              <label htmlFor="drugName">Drug Name</label>
-              <Field name="name" component={ renderField } type="text" />
-            </div>
-
-            <div className="">
-              <label htmlFor="dosage">Drug Dosage</label>
-              <Field name="dosage" component={ renderField } type="number" />
-            </div>
-
-            <div className="">
-              <label htmlFor="units">Drug Units</label>
-              <Field name="units" component={ renderField } type="number" />
-            </div>
-
-            <div className="">
-              <label htmlFor="expiration">Drug Expiration</label>
-              <Field name="expiration" component={ renderField } type="date" />
-            </div>
+ (
+	<div>
+        {/* `NOTA: TOQUE UN TOQUE EL WIDTH FORM  */}
+    <form onSubmit={ handleSubmit } autoComplete="off" style={{width:'50%'}}>
+      <div className="meds-form">
+        <div className="">
+          <label htmlFor="manufacturer" >Manufacturer</label>
+            <Field name="manufacturer" component={ renderField } required type="text"  />
           </div>
-          <div>
-            { error && <strong style={{color:'darkred'}}>{ error }</strong> }
+          <div className="">
+            <label htmlFor="comercialName">Comercial Name</label>
+            <Field name="comercialName" component={ renderField } type="text" />
           </div>
-          <br></br>
-          <button type="submit" disabled={ pristine  || submitting } className={ pristine ? `register-btn btn-disabled` : `register-btn`}>Upload Med</button>
-        </form>
-      </div>
-	) : (<div>PleaseTryAgain</div>)
-	export default MedsForm = reduxForm({
-		form: 'meds',
-		validate,
-		onSubmit: (values, dispatch) => {
-			console.log('valores', values)
-			return dispatch(addMed(values))
-			.catch(err =>{
-				throw new SubmissionError({
-				_error: 'Upload Failed',
-			})
-			})
-		}
-	})(MedsForm)
+           <div className="">
+            <label htmlFor="drugName">Drug Name</label>
+            <Field name="name" component={ renderField } type="text" />
+          </div>
+          <div className="">
+            <label htmlFor="dosage">Drug Dosage</label>
+            <Field name="dosage" component={ renderField } type="number" />
+          </div>
+          <div className="">
+            <label htmlFor="units">Drug Units</label>
+            <Field name="units" component={ renderField } type="number" />
+          </div>
+          <div className="">
+            <label htmlFor="expiration">Drug Expiration</label>
+            <Field name="expiration" component={ renderField } type="date" />
+          </div>
+        </div>
+        <div>
+          { error && <strong style={{color:'darkred'}}>{ error }</strong> }
+        </div>
+        <br></br>
+        <button type="submit" disabled={ pristine  || submitting } className={ pristine ? `register-btn btn-disabled` : `register-btn`}>Upload Med</button>
+      </form>
+    </div>
+)
+export default MedsForm = reduxForm({
+	form: 'meds',
+	validate,
+	onSubmit: (values, dispatch) => {
+		console.log('valores', values)
+		return dispatch(addMed(values))
+		.catch(err =>{
+			throw new SubmissionError({
+			_error: 'Upload Failed',
+		})
+		})
+	}
+})(MedsForm)

@@ -1,4 +1,4 @@
-import { ADD_MED, GET_MEDS} from '../constants/actionTypes.js';
+import { ADD_MED, GET_MEDS, GET_MED, LOG_OUT} from '../constants/actionTypes.js';
 
 const initialState = localStorage.meds || [];
 
@@ -6,13 +6,18 @@ const medsReducer = (state=initialState, action) => {
 	switch( action.type) {
 		case ADD_MED:
 			return [
-			action.med
+				action.med
+			]
+		case GET_MED:
+			return [
+				action.med
 			]
 		case GET_MEDS:
-			localStorage.setItem('meds', action.meds);
 			return [
 				action.meds
 			];
+		case LOG_OUT:
+			return state
 		default:
 			return state;
 		}

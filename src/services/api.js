@@ -39,8 +39,11 @@ class MhubApi {
 					"expiration": values.expiration,
 					"image": values.image,
 					"owner": values.owner
-				}).then((response)=> console.log('Its uploaded:', response.data))
-						.catch( (error)=> {console.log('error api: ', error)})
+				}, (err, medu) => {
+					if (err) return console.log('error api', err);
+					console.log('its uploaded: ', medu)
+					return medu.data;
+				})
 )
 
 getMeds = (token) => (
@@ -53,14 +56,13 @@ getMeds = (token) => (
 	)
 
 
-	checkUser = async (id , token ) => console.log('User Id coming from API: ', id) || (
-		await this.axios.head(`/user/${id}`, {
+	checkUser = (userId , token) => console.log('User token coming from API: ', token) || (
+		 this.axios.get(`/users/${userId}`, {
 			headers: {
-							"Content-Type": "application/json",
-							"Authorization": "Bearer" + token
+							"Authorization": "Bearer " + token
 					}
 				})
-		.then( response => response.data )
-		).catch((error)=> console.log('error:', error) );
-}	
+		.then(response => console.log('responsedUser:', response.data) || response.data
+		).catch((error)=> console.log('error:', error)))
+}
 export default MhubApi;

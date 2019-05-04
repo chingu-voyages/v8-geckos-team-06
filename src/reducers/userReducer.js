@@ -2,14 +2,12 @@ import {
 	GET_USER
 } from '../constants/actionTypes.js'
 
-const initialState = ''
+const initialState = {}
 
 const userReducer = (state= initialState, action) => {
 	switch (action.type) {
 		case GET_USER:
-			return [
-			action.user
-			]
+			return action.user
 		default:
 			return state
 	}

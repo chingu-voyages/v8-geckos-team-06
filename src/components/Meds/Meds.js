@@ -9,7 +9,8 @@ constructor(props) {
  this.state = {
  	token: props.token,
  	id: props.id,
- 	meds: []
+ 	meds: [],
+ 	med: {}
  };
 	this.api = new MhubApi();
 	this.getMedsData = this.getMedsData.bind(this);
@@ -27,7 +28,6 @@ getMedsData() {
 
 	render() {
 		const { meds } = this.state;
-		console.log('This are the meds: ', meds)
 		return (
 			<div className="MedsList">
 				<h3>Medication List</h3>

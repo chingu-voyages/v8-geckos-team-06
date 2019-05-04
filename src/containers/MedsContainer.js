@@ -4,11 +4,12 @@ import { addMed, getMed } from '../actions'
 
 import { connect } from 'react-redux'
 
-import { getToken, getMeds } from '../selectors/'
+import { getToken, getMeds, getMed } from '../selectors/'
 
 const mapStateToProps = state => ({
 	token: getToken(state),
-	meds: getMeds(state)
+	meds: getMeds(state),
+	med: getMed(state)
 })
 
 const mapDispatchToProps = dispatch => ({

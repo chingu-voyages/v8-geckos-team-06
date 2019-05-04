@@ -22,8 +22,8 @@ export const login = ( values ) => (dispatch, getState, api ) =>
 				dispatch({type: SET_ID, userId: res.id});
 			})
 
-export const getUserData = ( values ) => (dispatch, getState, api) => 
-	api.checkUser(values)
+export const getUserData = ( userId, token ) => (dispatch, getState, api) => 
+	api.checkUser(userId, token)
 		.then( res => {
 			dispatch({ type: GET_USER, user: res.user})
 	});
@@ -37,7 +37,6 @@ export const register = ( values ) =>  (dispatch, getState, api) =>
 					})
 			}, ( err => {
 				console.log('err',err);
-				console.log('VALOERROR',values);
 			}))
 export const addUser = ( values ) => (dispatch, getState, api) =>
 			api.addUser( values )
@@ -52,18 +51,21 @@ export const changeDraft = (valueDraft) => ({
 
 export const addMed = ( values ) => (dispatch, getState, api) => 
 	api.addingMed( values )
-		.then ( res => {
-			console.log('res:', res)
+		.then( response => {
+			if( response === undefined) {
+				throw {error: 'Error'};
+			}
 			dispatch({
 				type: ADD_MED,
-				med: res.med
-			})
+				med: response.data
+			});
 		})
+		.catch(e => console.log('errorINACTION: ', e))
 
 		export const getMed = (token) => (dispatch, getState, api) => 
 			api.getMeds(token)
 				.then (res => {
-					console.log('actioncreatorGETMED:', res);
+					// console.log('actioncreatorGETMED:', res);
 					dispatch({
 						type: GET_MEDS,
 						meds: res.meds

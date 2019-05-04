@@ -14,8 +14,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+onGetUser: () => {
+},
 onLogOut: () => {
-	console.log();
+	console.log('Im logging out');
 	dispatch( logOut() );
 	}
 })
