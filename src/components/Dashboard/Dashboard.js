@@ -6,15 +6,12 @@ import { PropTypes } from 'prop-types';
 
 
 class Dashboard extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       user: {},
     }
   }
-
-
  componentDidMount() {
   this.props.getUserData(this.props.userId, this.props.token)
     .then(user => this.setState({
@@ -24,9 +21,8 @@ class Dashboard extends Component {
  }
 
   render() {
-    const {userId, token, logOut} = this.props
-    const { user } = this.state
-    console.log('User: ', this.state.user)
+    const {userId, token, user, logOut} = this.props
+    console.log('User: ', user)
     return (
       <div className="container-fluid grid-container Dashboard">
       <nav className="dash-nav">

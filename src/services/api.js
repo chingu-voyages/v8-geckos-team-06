@@ -56,8 +56,8 @@ getMeds = (token) => (
 	)
 
 
-	checkUser = (userId , token) => console.log('User token coming from API: ', token) || (
-		 this.axios.get(`/users/${userId}`, {
+	checkUser = async (userId , token) => console.log('User token coming from API: ', token) || (
+		 await this.axios.get(`/users/${userId}`, {
 			headers: {
 							"Authorization": "Bearer " + token
 					}
