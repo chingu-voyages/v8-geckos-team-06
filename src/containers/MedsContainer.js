@@ -1,7 +1,6 @@
 import Meds from '../components/Meds/Meds.js';
-import {reset} from 'redux-form';
 
-import { addMed, getMed } from '../actions'
+import { addMed, getMedData } from '../actions'
 
 import { connect } from 'react-redux'
 
@@ -16,10 +15,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 	onSetMed: ( manufacturer, comercialName, name, dosage, units, expiration, owner ) => {
 		dispatch( addMed(manufacturer, comercialName, name, dosage, units, expiration, owner ));
-		dispatch(reset('meds'));
 	},
 	onGetMed: (token) => {
-		dispatch( getMed(token));
+		dispatch( getMedData(token));
 	}
 })
 

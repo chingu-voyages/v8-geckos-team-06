@@ -26,7 +26,7 @@ class MhubApi {
 			"terms": values.terms
 		})
 		)
-		.then( response => {console.log('Coming from server response.data: ', response.data)})
+		.then( response => console.log('Coming from server response.data: ', response.data) || response.data )
 		.catch( (error)=> {console.log('error api: ', error)});
 
 		addingMed = async ( values ) => console.log('valuesMed: ', values) || (

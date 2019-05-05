@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Dashboard from '../components/Dashboard/Dashboard.js';
 import { getDraft, getisLogged, getToken, getUserId, getUser } from '../selectors';
-import { logOut } from '../actions';
+import { logOut, getUserData } from '../actions';
 
 
 
@@ -13,17 +13,4 @@ const mapStateToProps = state => ({
 	user: getUser(state)
 });
 
-const mapDispatchToProps = dispatch => ({
-onGetUser: () => {
-},
-onLogOut: () => {
-	console.log('Im logging out');
-	dispatch( logOut() );
-	}
-})
-
-
-
-
-
-export default connect( mapStateToProps, mapDispatchToProps )(Dashboard)
+export default connect( mapStateToProps, { getUserData, logOut } )(Dashboard)

@@ -22,10 +22,10 @@ export const login = ( values ) => (dispatch, getState, api ) =>
 				dispatch({type: SET_ID, userId: res.id});
 			})
 
-export const getUserData = ( userId, token ) => (dispatch, getState, api) => 
+export const getUserData = (userId, token) => (dispatch, getState, api) => 
 	api.checkUser(userId, token)
 		.then( res => {
-			dispatch({ type: GET_USER, user: res.user})
+		 	dispatch({ type: GET_USER, user: res})
 	});
 
 export const register = ( values ) =>  (dispatch, getState, api) => 
@@ -62,7 +62,7 @@ export const addMed = ( values ) => (dispatch, getState, api) =>
 		})
 		.catch(e => console.log('errorINACTION: ', e))
 
-		export const getMed = (token) => (dispatch, getState, api) => 
+		export const getMedData = (token) => (dispatch, getState, api) => 
 			api.getMeds(token)
 				.then (res => {
 					// console.log('actioncreatorGETMED:', res);
