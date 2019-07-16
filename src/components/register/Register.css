@@ -1,0 +1,298 @@
+.Register {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bgcolor);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  padding-top: 20px;
+  /* margin-bottom: 1em; */
+  color: #444;
+
+}
+
+.register-title {
+  font-size: 1.5em;
+  align-self: center;
+  margin: 1em;
+  color: var(--blue);
+}
+
+
+
+.input-container {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+}
+
+.input-container label, .tos-container label {
+  font-weight: 600;
+}
+
+.form-input {
+  display: flex;
+  width: 100%;
+  padding: 3px 0;
+  font-size: 1em;
+  /* text-align: center; */
+  border: none;
+  background-color: var(--bgcolor);
+  border-bottom: 2px solid #999;
+  transition: all 300ms ease-out;
+}
+
+.form-input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 2px 0 0 var(--blue);
+  outline: none;
+  color: var(--blue);
+}
+
+.form-input:focus + label {
+  color: var(--blue);
+}
+
+.form-input::placeholder {
+  font-weight: 100;
+  opacity: .5;
+}
+
+.form-input::-webkit-input-placeholder {
+  font-weight: 100;
+  opacity: .5;
+}
+
+.form-input:-ms-input-placeholder {
+  font-weight: 100;
+  opacity: .5;
+}
+
+.form-input label {
+  margin: 5px;
+}
+
+
+
+.name, .email, .password, .confirm-password {
+  order: -1;
+}
+
+.tos-container {
+  margin: .5em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tos-container label {
+  order: -1;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.tos-container label:hover {
+  color: var(--blue);
+  /* text-decoration: underline; */
+  box-shadow: 0 2px 0 0 var(--blue);
+}
+
+.tos-container label span {
+  font-weight: 600;
+  color: var(--blue);
+
+}
+
+.tos-container label span:hover, .tos-container label span:focus {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tos {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  /* position: relative; */
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  background: var(--bgcolor);
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+}
+
+.tos:hover {
+}
+
+.tos:checked {
+  background: var(--blue);
+}
+
+.tos:checked::before {
+  height: 30px;
+  width: 28px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 28px;
+  color: #fff;
+}
+
+.form-buttons {
+
+}
+
+.register-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: none;
+  border: 2px solid var(--blue);
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--blue);
+  transition: all 200ms ease;
+}
+
+.register-btn:hover, .register-btn:focus {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-disabled {
+  border-color: #5f6478;
+  color: #5f6478;
+  pointer-events: none;
+}
+
+.form-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.form-link {
+  cursor: pointer;
+  opacity: 1;
+  margin-top: .2em;
+  margin-bottom: 1em;
+  transition: all .15s ease-in;
+}
+
+.form-link:hover, .form-link:focus {
+  opacity: .5;
+  transition: all .15s ease-in;
+}
+
+.form-link-label {
+  display: block;
+  color: goldenrod;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Invalid Input messages */
+.invalid span {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+/* MODAL TINT */
+.tint {
+  background-color: #333;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 500px) {
+  .Register {
+    flex-direction: row;
+  }
+
+  .register-title {
+    margin-right: 3em;
+    margin-left: 0;
+  }
+
+  .register-form {
+    margin-bottom: 0;
+  }
+
+  .sign_up {
+    /* align-items: flex-end; */
+  }
+
+  .pill-wrapper {
+    display: flex;
+  }
+
+  .input-container {
+    /* flex-direction: row;
+    justify-content: space-between;
+    width: 100%; */
+  }
+  .form-input {
+    display: block;
+  }
+
+  .tos-container {
+    /* display: block; */
+    flex-direction: row;
+  }
+
+  .tos {
+    top: 13.33333px;
+    order: -1;
+    margin-left: 0;
+  }
+}
+
+@media (max-height: 700px) {
+  .register-form {
+    padding-top: 1em;
+  }
+
+  .input-container {
+    margin: .5em;
+  }
+
+  .form-link-label {
+    margin-top: 1em;
+  }
+}
+/* PIll icon */
+.pill-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.pill-icon {
+  width: 60px;
+  height: 20px;
+  border: 2px solid var(--blue);
+  border-radius: 15px;
+  background-image: linear-gradient(to right, var(--blue) 50%, #fff 50%);
+  transform: rotate(-45deg);
+}

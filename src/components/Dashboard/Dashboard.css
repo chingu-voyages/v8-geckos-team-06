@@ -1,0 +1,203 @@
+.Dashboard {
+  background: var(--bgcolor);
+  min-height: 100vh;
+  margin: 0;
+}
+
+.dash-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: var(--bgcolor);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dash-title {
+  /* width: 100%;
+  position: fixed;
+  top: 0; */
+  background-color: var(--bgcolor);
+  font-size: 1.7em;
+  margin: 0;
+  padding-left: 1rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.dash-title span {
+  color: var(--green);
+}
+
+.logout-btn {
+  cursor: pointer;
+  /* position: fixed;
+  top: 1rem;
+  right: 1rem; */
+  background: none;
+  /* border: none;
+  border-bottom-style: solid;  OLD STYLE
+  border-bottom-color: transparent; */
+  margin: 0;
+  margin-right: .5rem;
+  padding: 0 .5rem;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #444;
+  transition: all 200ms ease;
+}
+
+.logout-btn:hover, .logout-btn:focus {
+  /* padding-top: 15px; */
+  /* border-bottom-color: #444; */
+  /* background-color: #444;
+  color: var(--bgcolor); */
+  border: 2px solid #444;
+}
+
+
+.header {
+  margin-top: 5rem;
+  text-align: left;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.header h3:last-of-type {
+  margin-top: 0;
+}
+
+.header h3:first-of-type {
+  margin-bottom:.5rem;
+}
+
+.header h3 span {
+  color: var(--blue);
+  font-size: 1.2rem;
+}
+
+
+.dash-main-grid {
+  display: flex;
+}
+
+.sidePanel {
+  flex: 1;
+}
+
+.Searchbar {
+  margin-top: 1em;
+}
+
+.listofMeds {
+  flex: 3;
+}
+
+.getmeds-btn {
+  cursor: pointer;
+  margin: 1em;
+  padding: 8px 15px;
+  background: none;
+  border: 2px solid var(--green);
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--green);
+  transition: all 200ms ease;
+}
+
+.getmeds-btn:hover, .getmeds-btn:focus {
+  background: var(--green);
+  color: #fff;
+  padding: 8px 20px;
+}
+
+.meds-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 0.5rem;
+  padding: 1em;
+}
+
+.med-card {
+  background-color: #ccc;
+  filter: grayscale(1);
+  border-radius: 5px;
+  transition: all 200ms ease-in;
+}
+
+.med-card img {
+  width: 100%;
+  transition: all 300ms ease-in-out;
+}
+
+.med-card:hover {
+  cursor: pointer;
+  filter: grayscale(0);
+  box-shadow: 0 2px 10px -2px #333;
+}
+
+@media (max-width: 800px) {
+  .header {
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .dash-main-grid {
+    flex-direction: column;
+  }
+
+}
+/* GRID LAYOUT */
+/* .grid-container {
+  display: grid;
+  grid-template-columns: minmax(200px, 25vw) 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "aside1 main main main"
+    "aside2 main main main"
+    "aside3 main main main"
+    "footer footer footer footer";
+}
+
+.item {
+  background-color: honeydew;
+}
+
+.header {
+  grid-area: header;
+  background-color: blue;
+}
+
+.Searchbar {
+  grid-area: aside1;
+  background-color: orange;
+
+}
+
+.sidePanel {
+  grid-area: aside2;
+}
+
+.listofMeds {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.meds-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 5px 10px;
+}
+
+.med-card {
+
+} */
